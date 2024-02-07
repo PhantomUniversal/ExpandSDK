@@ -1,6 +1,8 @@
+#if UNITY_EDITOR
+
 namespace PhantomEditor
 {
-    public static class PhantomHelper
+    internal static class PhantomHelper
     {
 
         /// <summary>
@@ -20,3 +22,5 @@ namespace PhantomEditor
 
     }
 }
+
+#endif
