@@ -2,7 +2,7 @@
 
 namespace PhantomEditor
 {
-    internal enum PhantomResourceType
+    public enum PhantomResourceType
     {
         None = 0,
         Icon = 1,

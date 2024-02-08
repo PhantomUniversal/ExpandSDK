@@ -2,10 +2,33 @@
 
 namespace PhantomEditor
 {
-    internal static class PhantomGUIHelper
+    public static class PhantomGUIHelper
     {
 
-        
+        #region LAYOUT
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const float Margin = 20f;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const float Space = 10f;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const float Label = 80f;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const float Content = 20f;
+
+        #endregion
+
     }
 }
 

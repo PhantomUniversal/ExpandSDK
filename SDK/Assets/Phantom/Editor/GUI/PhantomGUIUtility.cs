@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace PhantomEditor
 {
-    internal static class PhantomGUIUtility
+    public static class PhantomGUIUtility
     {
 
         #region REPAINT
@@ -19,16 +19,16 @@ namespace PhantomEditor
         // ==================================================
         // [ Event ]
         // ==================================================
-        internal static void RequestRepaint() => IsRepaint = true;
+        public static void RequestRepaint() => IsRepaint = true;
 
-        internal static void ClearRepaint() => IsRepaint = false;
+        public static void ClearRepaint() => IsRepaint = false;
 
         
         /// <summary>
         /// current gui total height update
         /// </summary>
         /// <param name="value"> height value </param>
-        internal static void UpdateRepaint(float value)
+        public static void UpdateRepaint(float value)
         {
             EditorGUILayout.Space(value);
             RequestRepaint();
@@ -37,7 +37,7 @@ namespace PhantomEditor
         // ==================================================
         // [ Function ]
         // ==================================================
-        internal static void Repaint(this EditorWindow window)
+        public static void Repaint(this EditorWindow window)
         {
             if (!IsRepaint)
                 return;
@@ -52,7 +52,7 @@ namespace PhantomEditor
         }
         
         // [ Editor ]
-        internal static void Repaint(this Editor editor)
+        public static void Repaint(this Editor editor)
         {
             if (!IsRepaint)
                 return;

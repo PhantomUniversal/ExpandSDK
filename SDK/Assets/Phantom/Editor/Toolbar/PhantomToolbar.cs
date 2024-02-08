@@ -8,57 +8,123 @@ using UnityEngine.UIElements;
 namespace PhantomEditor
 {
     [InitializeOnLoad]
-    public class PhantomToolbar : Editor
+    public static class PhantomToolbar
     {
-        
         static PhantomToolbar()
         {
-            EditorApplication.update += Update;
+            EditorApplication.update += OnUpdate;
         }
 
-
-        #region TOOLBAR
-
-        private static ScriptableObject toolbar;
         
-        private static void Update()
+        #region VARIABLE
+
+        private static bool _toolbarEnable;
+        private static ScriptableObject _toolbar;
+
+        #endregion
+        
+        
+        
+        #region LIFECYCLE
+        
+        private static void OnUpdate()
         {
-            if (toolbar is null)
+            if (_toolbar is null)
             {
                 var toolbars =  Resources.FindObjectsOfTypeAll(typeof(Editor).Assembly.GetType(PhantomToolbarHelper.Assembly));
-                toolbar = toolbars.Length > 0 ? (ScriptableObject)toolbars[0] : null;
-                return;
+                _toolbar = toolbars.Length > 0 ? (ScriptableObject)toolbars[0] : null;
+
+                if (_toolbar is null)
+                    return;
+                
+                FieldInfo root = _toolbar.GetType().GetField(PhantomToolbarHelper.Root, BindingFlags.NonPublic | BindingFlags.Instance);
+                if(root is null)
+                    return;
+            
+                VisualElement toolbarVisual = root.GetValue(_toolbar) as VisualElement;
+                VisualElement toolbarZone = toolbarVisual.Q("ToolbarZoneRightAlign");
+                VisualElement toolbarStyle = new VisualElement()
+                {
+                    style =
+                    {
+                        flexGrow = 1,
+                        flexDirection = FlexDirection.Row,
+                    }
+                };
+            
+                IMGUIContainer container = new IMGUIContainer();
+                container.onGUIHandler += OnGUI;
+            
+                toolbarStyle.Add(container);
+                toolbarZone.Add(toolbarStyle);
             }
             
-            FieldInfo root = toolbar.GetType().GetField(PhantomToolbarHelper.Root, BindingFlags.NonPublic | BindingFlags.Instance);
-            if(root is null)
-                return;
-            
-            VisualElement toolbarVisual = root.GetValue(toolbar) as VisualElement;
-            VisualElement toolbarZone = toolbarVisual.Q("ToolbarZoneRightAlign");
-            VisualElement toolbarStyle = new VisualElement()
-            {
-                style =
-                {
-                    flexGrow = 1,
-                    flexDirection = FlexDirection.Row,
-                }
-            };
-            
-            IMGUIContainer container = new IMGUIContainer();
-            toolbarStyle.Add(container);
-            toolbarZone.Add(toolbarStyle);
-            
-            container.onGUIHandler += GUI;
+
         }
 
-        private static void GUI()
+        private static void OnGUI()
+        {
+            Rect baseRect = EditorGUILayout.BeginHorizontal();
+            baseRect.x = PhantomGUIHelper.Margin;
+
+            if (_toolbarEnable)
+            {
+                baseRect.width = PhantomGUIHelper.Content * 4;
+                baseRect.height = PhantomGUIHelper.Content;
+
+                // Import
+                if (GUI.Button(baseRect, PhantomGUIResource.EditorIcon("import.png"), PhantomGUIStyle.BoldButton))
+                {
+                    Import();
+                }
+            }
+            else
+            {
+                baseRect.width = PhantomGUIHelper.Content * 3;
+                baseRect.height = PhantomGUIHelper.Content;
+
+                // Build
+                if (GUI.Button(baseRect, PhantomGUIResource.EditorIcon("publish.png"), PhantomGUIStyle.BoldButton))
+                {
+                    Publish();
+                }
+
+                baseRect.x += baseRect.width;
+                baseRect.width = PhantomGUIHelper.Content;
+                baseRect.height = PhantomGUIHelper.Content;
+                
+                // Etc(UI => Dropdown)
+                if (GUI.Button(baseRect, PhantomGUIResource.EditorIcon("etc.png"), PhantomGUIStyle.BoldButton))
+                {
+                    Etc();
+                }
+            }
+            
+            EditorGUILayout.EndHorizontal();
+        }
+        
+        #endregion
+
+
+
+        #region FUNCTION
+
+        private static void Import()
+        {
+            
+        }
+        
+        private static void Publish()
+        {
+
+        }
+
+        private static void Etc()
         {
             
         }
         
         #endregion
-        
         
     }
 }

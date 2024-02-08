@@ -5,25 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="052d4373-0d20-4d17-8e79-09128fe600ee" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIExtension.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIHelper.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIResource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIResource.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIStyle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIStyle.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIUtility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIUtility.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/Gui.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomUtility.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Resource/Icon/import.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Resource/Icon/import.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Resource/Icon/publish.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Resource/Icon/publish.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Resource/So.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Resource/So/PhantomToolbarImport.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Resource/So/PhantomToolbarImport.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SDK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDK/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIStyle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIStyle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomEnum.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/Toolbar/PhantomToolbar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/Toolbar/PhantomToolbar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/Toolbar/PhantomToolbarHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/Toolbar/PhantomToolbarHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Resource/Icon/download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Resource/Icon/download.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomTemp/Scene/Example.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomTemp/Scene/Example.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +59,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Unity 에디터에 연결.Unity 에디터에 연결.executor": "Debug",
     "git-widget-placeholder": "dev",
-    "ignore.virus.scanning.warn.message": "true"
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "settings.sync"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
@@ -84,10 +89,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="42668">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="42668" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -115,7 +120,8 @@
       <updated>1707216017641</updated>
       <workItem from="1707216021799" duration="1034000" />
       <workItem from="1707277344980" duration="14438000" />
-      <workItem from="1707309179750" duration="1156000" />
+      <workItem from="1707309179750" duration="659000" />
+      <workItem from="1707358711580" duration="12945000" />
     </task>
     <servers />
   </component>

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace PhantomEditor
 {
-    internal static class PhantomGUIResource
+    public static class PhantomGUIResource
     {
 
         #region PATH
@@ -18,7 +18,7 @@ namespace PhantomEditor
         /// <param name="file">Resource name</param>
         /// <param name="package">Method call path</param>
         /// <returns></returns>
-        internal static string BindPath(PhantomResourceType type, string file, [CallerFilePath] string package = null)
+        public static string BindPath(PhantomResourceType type, string file, [CallerFilePath] string package = null)
         {
             if (type == PhantomResourceType.None || string.IsNullOrEmpty(file))
                 return string.Empty;
@@ -29,7 +29,7 @@ namespace PhantomEditor
         private static string CombinePath(string packagePath, string resourcePath)
         {
             return packagePath.Contains(PhantomHelper.Identifier) 
-                ? $"Package/{PhantomHelper.Identifier}/Resource/{resourcePath}" : $"Assets/{PhantomHelper.Root}/Resource/{resourcePath}";
+                ? $"Package/{PhantomHelper.Identifier}/Resource/{resourcePath}" : $"{PhantomHelper.Resource}/{resourcePath}";
         }
 
         #endregion
@@ -40,7 +40,7 @@ namespace PhantomEditor
 
         private const int TextureSize = 1000;
         
-        internal static Texture2D ColorTexture(Color color) => ColorTexture(TextureSize, TextureSize, color);
+        public static Texture2D ColorTexture(Color color) => ColorTexture(TextureSize, TextureSize, color);
         
         /// <summary>
         /// Get rgba color texture
@@ -49,7 +49,7 @@ namespace PhantomEditor
         /// <param name="height">Texture height</param>
         /// <param name="color">RGBA</param>
         /// <returns></returns>
-        internal static Texture2D ColorTexture(int width, int height, Color color)
+        public static Texture2D ColorTexture(int width, int height, Color color)
         {
             Color[] pixels = new Color[width * height];
 
@@ -77,7 +77,7 @@ namespace PhantomEditor
         /// </summary>
         /// <param name="icon">Icon full name (contain extension)</param>
         /// <returns></returns>
-        internal static Texture2D EditorIcon(string icon)
+        public static Texture2D EditorIcon(string icon)
         {
             return EditorGUIUtility.FindTexture(BindPath(PhantomResourceType.Icon, icon));
         }

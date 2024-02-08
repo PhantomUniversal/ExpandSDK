@@ -4,7 +4,9 @@ namespace PhantomEditor
 {
     internal static class PhantomToolbarHelper
     {
-        
+
+        #region HASH
+
         /// <summary>
         /// Assembly resource
         /// </summary>
@@ -14,6 +16,9 @@ namespace PhantomEditor
         /// Field root
         /// </summary>
         internal const string Root = "m_Root";
+
+        #endregion
+        
     }
 }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PhantomEditor
 {
-    internal static class PhantomGUIExtension
+    public static class PhantomGUIExtension
     {
 
         #region RECT
