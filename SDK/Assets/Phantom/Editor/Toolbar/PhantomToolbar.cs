@@ -13,6 +13,7 @@ namespace PhantomEditor
         static PhantomToolbar()
         {
             EditorApplication.update += OnUpdate;
+            EditorApplication.update += OnToolbar;
         }
 
         
@@ -26,39 +27,44 @@ namespace PhantomEditor
         
         
         #region LIFECYCLE
-        
+
         private static void OnUpdate()
         {
-            if (_toolbar is null)
-            {
-                var toolbars =  Resources.FindObjectsOfTypeAll(typeof(Editor).Assembly.GetType(PhantomToolbarHelper.Assembly));
-                _toolbar = toolbars.Length > 0 ? (ScriptableObject)toolbars[0] : null;
+            
+        }
+        
+        private static void OnToolbar()
+        {
+            if (_toolbar is not null) 
+                return;
+            
+            var toolbars =  Resources.FindObjectsOfTypeAll(typeof(Editor).Assembly.GetType(PhantomToolbarHelper.Assembly));
+            _toolbar = toolbars.Length > 0 ? (ScriptableObject)toolbars[0] : null;
 
-                if (_toolbar is null)
-                    return;
+            if (_toolbar is null)
+                return;
                 
-                FieldInfo root = _toolbar.GetType().GetField(PhantomToolbarHelper.Root, BindingFlags.NonPublic | BindingFlags.Instance);
-                if(root is null)
-                    return;
+            FieldInfo root = _toolbar.GetType().GetField(PhantomToolbarHelper.Root, BindingFlags.NonPublic | BindingFlags.Instance);
+            if(root is null)
+                return;
             
-                VisualElement toolbarVisual = root.GetValue(_toolbar) as VisualElement;
-                VisualElement toolbarZone = toolbarVisual.Q("ToolbarZoneRightAlign");
-                VisualElement toolbarStyle = new VisualElement()
+            VisualElement toolbarVisual = root.GetValue(_toolbar) as VisualElement;
+            VisualElement toolbarZone = toolbarVisual.Q("ToolbarZoneRightAlign");
+            VisualElement toolbarStyle = new VisualElement()
+            {
+                style =
                 {
-                    style =
-                    {
-                        flexGrow = 1,
-                        flexDirection = FlexDirection.Row,
-                    }
-                };
+                    flexGrow = 1,
+                    flexDirection = FlexDirection.Row,
+                }
+            };
             
-                IMGUIContainer container = new IMGUIContainer();
-                container.onGUIHandler += OnGUI;
+            IMGUIContainer container = new IMGUIContainer();
+            container.onGUIHandler += OnGUI;
             
-                toolbarStyle.Add(container);
-                toolbarZone.Add(toolbarStyle);
-            }
-            
+            toolbarStyle.Add(container);
+            toolbarZone.Add(toolbarStyle);
+
 
         }
 
