@@ -2,6 +2,8 @@
 
 using System.Reflection;
 using UnityEditor;
+using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -16,6 +18,41 @@ namespace PhantomEditor
             EditorApplication.update += OnToolbar;
         }
 
+
+        #region CONST
+
+        private const string ImportIcon = "import.png";
+
+        private const string PublishIcon = "publish.png";
+
+        private const string EtcIcon = "etc.png";
+        
+        #endregion
+
+
+
+        #region READONLY
+        
+        private const float ImportLength = PhantomGUIHelper.Content * 4;
+        
+        private static readonly GUILayoutOption[] ImportOption 
+            = { GUILayout.Width(ImportLength), GUILayout.Height(PhantomGUIHelper.Content) };
+        
+        
+        private const float PublishLength = PhantomGUIHelper.Content * 3;
+        
+        private static readonly GUILayoutOption[] PublishOption 
+            = { GUILayout.Width(PublishLength), GUILayout.Height(PhantomGUIHelper.Content) };
+        
+        
+        private const float EtcLength = PhantomGUIHelper.Content;
+        
+        private static readonly GUILayoutOption[] EtcOption 
+            = { GUILayout.Width(EtcLength), GUILayout.Height(PhantomGUIHelper.Content) };
+
+        #endregion
+
+        
         
         #region VARIABLE
 
@@ -30,7 +67,19 @@ namespace PhantomEditor
 
         private static void OnUpdate()
         {
-            
+            if (!AddressableAssetSettingsDefaultObject.Settings)
+            {
+                _toolbarEnable = false;
+                return;
+            }
+
+            if (!PhantomEditor.IsPhantomSetting)
+            {
+                _toolbarEnable = false;
+                return;
+            }
+
+            _toolbarEnable = true;
         }
         
         private static void OnToolbar()
@@ -49,7 +98,7 @@ namespace PhantomEditor
                 return;
             
             VisualElement toolbarVisual = root.GetValue(_toolbar) as VisualElement;
-            VisualElement toolbarZone = toolbarVisual.Q("ToolbarZoneRightAlign");
+            VisualElement toolbarZone = toolbarVisual.Q(PhantomToolbarHelper.Zone);
             VisualElement toolbarStyle = new VisualElement()
             {
                 style =
@@ -64,43 +113,29 @@ namespace PhantomEditor
             
             toolbarStyle.Add(container);
             toolbarZone.Add(toolbarStyle);
-
-
         }
 
         private static void OnGUI()
         {
-            Rect baseRect = EditorGUILayout.BeginHorizontal();
-            baseRect.x = PhantomGUIHelper.Margin;
-
-            if (_toolbarEnable)
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.Space(PhantomGUIHelper.Margin);
+            
+            if (!_toolbarEnable)
             {
-                baseRect.width = PhantomGUIHelper.Content * 4;
-                baseRect.height = PhantomGUIHelper.Content;
-
                 // Import
-                if (GUI.Button(baseRect, PhantomGUIResource.EditorIcon("import.png"), PhantomGUIStyle.BoldButton))
+                if (GUILayout.Button(PhantomGUIResource.EditorIcon(ImportIcon), PhantomGUIStyle.BoldButton, ImportOption))
                 {
                     Import();
                 }
             }
             else
             {
-                baseRect.width = PhantomGUIHelper.Content * 3;
-                baseRect.height = PhantomGUIHelper.Content;
-
-                // Build
-                if (GUI.Button(baseRect, PhantomGUIResource.EditorIcon("publish.png"), PhantomGUIStyle.BoldButton))
+                if (GUILayout.Button(PhantomGUIResource.EditorIcon(PublishIcon), PhantomGUIStyle.BoldButton, PublishOption))
                 {
                     Publish();
                 }
 
-                baseRect.x += baseRect.width;
-                baseRect.width = PhantomGUIHelper.Content;
-                baseRect.height = PhantomGUIHelper.Content;
-                
-                // Etc(UI => Dropdown)
-                if (GUI.Button(baseRect, PhantomGUIResource.EditorIcon("etc.png"), PhantomGUIStyle.BoldButton))
+                if (GUILayout.Button(PhantomGUIResource.EditorIcon(EtcIcon), PhantomGUIStyle.BoldButton, EtcOption))
                 {
                     Etc();
                 }
@@ -117,19 +152,69 @@ namespace PhantomEditor
 
         private static void Import()
         {
+            if (!AddressableAssetSettingsDefaultObject.SettingsExists)
+            {
+                AddressableAssetSettingsDefaultObject.Settings = AddressableAssetSettings.Create(AddressableAssetSettingsDefaultObject.kDefaultConfigFolder,
+                    AddressableAssetSettingsDefaultObject.kDefaultConfigAssetName, true, true);
+
+                UnityEditor.Compilation.CompilationPipeline.RequestScriptCompilation();
+            }
             
+            PhantomEditor.BindSetting();
         }
         
         private static void Publish()
         {
-
+            
         }
 
         private static void Etc()
         {
+            Rect lastRect = GUILayoutUtility.GetLastRect();
+            lastRect.x += PhantomGUIHelper.Margin + PublishLength;
+            lastRect.y += PhantomGUIHelper.Margin;
             
+            GenericMenu menu = new GenericMenu();
+            ProfileMenu(menu);
+            menu.AddSeparator("");
+            SettingMenu(menu);
+            menu.DropDown(lastRect);
         }
+
         
+        #endregion
+
+
+
+        #region MENU
+
+        private static void ProfileMenu(GenericMenu menu)
+        {
+            if (PhantomEditor.PhantomSetting.ProfileCount == 0)
+            {
+                menu.AddItem(new GUIContent("Profile"), false, () =>
+                {
+                    Debug.LogError("Profile does not exist. Please create a profile first.");
+                    PhantomEditor.SelectSetting();
+                });
+                return;
+            }
+            
+            for (var i = 0; i < PhantomEditor.PhantomSetting.ProfileCount; i++)
+            {
+                int index = i;
+                string text = $"[{index}] ";
+                text += string.IsNullOrEmpty(PhantomEditor.PhantomSetting.ProfileLabel(index)) ? "Empty profile" : PhantomEditor.PhantomSetting.ProfileLabel(index);
+                menu.AddItem(new GUIContent($"Profile/{text}"), PhantomEditor.PhantomSetting.profileIndex == index,
+                    () => { PhantomEditor.PhantomSetting.profileIndex = index; });  // Todo Index => Setting index 지정 
+            }
+        }
+
+        private static void SettingMenu(GenericMenu menu)
+        {
+            menu.AddItem(new GUIContent("Setting"), false, PhantomEditor.SelectSetting);
+        }
+
         #endregion
         
     }

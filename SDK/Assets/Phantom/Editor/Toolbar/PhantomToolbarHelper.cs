@@ -17,8 +17,18 @@ namespace PhantomEditor
         /// </summary>
         internal const string Root = "m_Root";
 
+        /// <summary>
+        /// Zone
+        /// </summary>
+        internal const string Zone = "ToolbarZoneRightAlign";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        internal const string Addressable = "";
+
         #endregion
-        
+
     }
 }
 
