@@ -19,6 +19,11 @@ namespace PhantomEditor
         /// Resource path
         /// </summary>
         public const string Resource = Root + "/" + "Resource";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string Setting = "PhantomSetting";
         
         /// <summary>
         /// Github url

@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+
+using UnityEditor;
 
 namespace PhantomEditor
 {
@@ -18,12 +20,12 @@ namespace PhantomEditor
 
         public override void OnInspectorGUI()
         {
-            base.OnInspectorGUI();
-            
             EditorGUI.BeginChangeCheck();
             serializedObject.Update();
             PhantomGUIUtility.Repaint(this);
+
             OnInspector();
+            
             serializedObject.ApplyModifiedProperties();
             if (EditorGUI.EndChangeCheck())
             {
@@ -36,3 +38,5 @@ namespace PhantomEditor
     }
     
 }
+
+#endif

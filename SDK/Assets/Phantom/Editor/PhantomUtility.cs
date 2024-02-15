@@ -11,7 +11,7 @@ namespace PhantomEditor
 
         #region SO
 
-        private const string DirectorySo = PhantomHelper.Resource + "/" + "So";
+        private const string DirectorySo = "Assets" + "/" + PhantomHelper.Setting;
 
         private const string ExtensionSo = ".asset";
         

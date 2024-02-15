@@ -1,6 +1,6 @@
 {
-    "name": "Phantom.Engine",
-    "rootNamespace": "PhantomEngine",
+    "name": "Phantom.Engine.UI",
+    "rootNamespace": "PhantomEngine.UI",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [
