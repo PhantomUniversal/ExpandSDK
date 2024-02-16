@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
     public static class PhantomGUIResource
     {
@@ -18,9 +18,9 @@ namespace PhantomEditor
         /// <param name="file">Resource name</param>
         /// <param name="package">Method call path</param>
         /// <returns></returns>
-        public static string BindPath(PhantomResourceType type, string file, [CallerFilePath] string package = null)
+        public static string BindPath(PhantomGUIResourceType type, string file, [CallerFilePath] string package = null)
         {
-            if (type == PhantomResourceType.None || string.IsNullOrEmpty(file))
+            if (type == PhantomGUIResourceType.None || string.IsNullOrEmpty(file))
                 return string.Empty;
 
             return package is null ? string.Empty : CombinePath(package, $"{type.ToString()}/{file}");
@@ -79,7 +79,7 @@ namespace PhantomEditor
         /// <returns></returns>
         public static Texture2D EditorIcon(string icon)
         {
-            return EditorGUIUtility.FindTexture(BindPath(PhantomResourceType.Icon, icon));
+            return EditorGUIUtility.FindTexture(BindPath(PhantomGUIResourceType.Icon, icon));
         }
         
         #endregion

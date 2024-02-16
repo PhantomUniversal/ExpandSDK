@@ -2,7 +2,7 @@
 
 using System;
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
     [Serializable]
     public class SettingProfile

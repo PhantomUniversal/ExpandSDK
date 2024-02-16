@@ -2,9 +2,8 @@
 
 using UnityEditor;
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
-    
     public abstract class PhantomGUIEditor : Editor
     {
 
@@ -21,14 +20,16 @@ namespace PhantomEditor
         public override void OnInspectorGUI()
         {
             EditorGUI.BeginChangeCheck();
+            
             serializedObject.Update();
+            DrawPropertiesExcluding(serializedObject, new string[] { "m_Script" });
+            
             PhantomGUIUtility.Repaint(this);
-
             OnInspector();
             
-            serializedObject.ApplyModifiedProperties();
             if (EditorGUI.EndChangeCheck())
             {
+                serializedObject.ApplyModifiedProperties();
                 EditorUtility.SetDirty(target);    
             }
         }

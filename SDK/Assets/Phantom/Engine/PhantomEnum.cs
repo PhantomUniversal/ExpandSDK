@@ -1,7 +1,9 @@
 ﻿#if UNITY_EDITOR
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
+    
+
     
     public enum PhantomProfileType
     {
@@ -13,11 +15,7 @@ namespace PhantomEditor
         Production
     }  
     
-    public enum PhantomResourceType
-    {
-        None = 0,
-        Icon = 1,
-    }
+
     
 }
 

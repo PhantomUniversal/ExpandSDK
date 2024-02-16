@@ -3,26 +3,26 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
     public static class PhantomGUIUtility
     {
-
+        
         #region REPAINT
+        
         
         // ==================================================
         // [ Property ]
         // ==================================================
         private static bool IsRepaint { get; set; }
-
+        
         
         // ==================================================
-        // [ Event ]
+        // [ Utility ]
         // ==================================================
         public static void RequestRepaint() => IsRepaint = true;
 
         public static void ClearRepaint() => IsRepaint = false;
-
         
         /// <summary>
         /// current gui total height update

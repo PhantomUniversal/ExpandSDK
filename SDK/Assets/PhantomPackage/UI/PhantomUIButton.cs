@@ -9,7 +9,7 @@ namespace PhantomEngine.UI
 
         #region COMPONENT
         
-        public Button eventButton;
+        [SerializeField] private Button eventButton;
 
         #endregion
 

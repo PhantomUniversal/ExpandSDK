@@ -4,7 +4,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
     public class PhantomUtility : Editor
     {

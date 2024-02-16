@@ -106,28 +106,34 @@ namespace PhantomEngine.UI
             }
         }
 
-        public static void TypeEvent(PhantomUIRequest request)
+        public static void TypeEvent(PhantomUIType type, PhantomUIRequest request)
         {
             if (!IsContainer)
                 return;
+
+            if (type == PhantomUIType.None)
+            {
+                AllEvent(request);
+                return;
+            }
             
             foreach (var target in _container)
             {
-                if(target.Value.type != request.type)
+                if(target.Value.type != type)
                     continue;
                 
                 target.Key.OnEventCallback(request);
             }
         }
         
-        public static void TargetEvent(PhantomUIRequest request)
+        public static void TargetEvent(string uid, PhantomUIRequest request)
         {
             if (!IsContainer)
                 return;
             
             foreach (var target in _container)
             {
-                if (target.Value.uid != request.uid) 
+                if (target.Value.uid != uid) 
                     continue;
                 
                 target.Key.OnEventCallback(request);

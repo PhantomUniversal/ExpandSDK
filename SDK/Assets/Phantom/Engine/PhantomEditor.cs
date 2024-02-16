@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
     [InitializeOnLoad]
     public static class PhantomEditor

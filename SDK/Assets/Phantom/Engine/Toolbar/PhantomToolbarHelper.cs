@@ -1,6 +1,6 @@
 ﻿#if UNITY_EDITOR
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
     internal static class PhantomToolbarHelper
     {

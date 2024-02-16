@@ -6,17 +6,24 @@ namespace PhantomEngine.UI
     [Serializable]
     public class PhantomUIConfig
     {
-        public int type;
+        public PhantomUIType type;
         public string uid;
     }
     
     [Serializable]
-    public class PhantomUIRequest : PhantomUIConfig
+    public class PhantomUIRequest
     {
-        public int status;
         public int hash;
         public string key;
         public string value;
+    }
+
+    [Serializable]
+    public class PhantomUIListener
+    {
+        public int status;
+        public PhantomUIConfig config;
+        public PhantomUIRequest request;
     }
     
 }

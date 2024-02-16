@@ -5,31 +5,108 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="052d4373-0d20-4d17-8e79-09128fe600ee" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/Phantom.Engine.UI.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/Phantom.Engine.UI.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIEnum.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIRoot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIRoot.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUITable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUITable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomSetting.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomSetting/PhantomSetting.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomSetting/PhantomSetting.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomEnumDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomEnumDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomEnumAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomEnumAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Config.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIExtension.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIResource.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIResource.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIStyle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIStyle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIUtility.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Phantom.Engine.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Phantom.Engine.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomNote.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomNote.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomSetting.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomSetting.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomTable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomTable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomUtility.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Toolbar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Toolbar/PhantomToolbar.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Toolbar/PhantomToolbar.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Toolbar/PhantomToolbarHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Toolbar/PhantomToolbarHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUICanvasGroup.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIInspector.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SDK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Runtime/Phantom.Engine.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Runtime/Phantom.Engine.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Runtime/Setting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIExtension.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIExtension.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIResource.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIResource.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIStyle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIStyle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIUtility.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIUtility.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/Gui.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/Phantom.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/Phantom.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomEnum.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomEnum.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomNote.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomNote.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomSetting.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomSetting.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomTable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomTable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomUtility.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/PhantomUtility.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/Toolbar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/Toolbar/PhantomToolbar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/Toolbar/PhantomToolbar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/Toolbar/PhantomToolbarHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Editor/Toolbar/PhantomToolbarHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Runtime.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Runtime/Phantom.Engine.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Runtime/Phantom.Engine.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/Phantom.Engine.UI.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/Phantom.Engine.UI.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUITable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUITable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomTemp/Scene/Example.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomTemp/Scene/Example.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +117,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Phantom/Editor/GUI/PhantomGUIUtility.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Phantom/Editor/PhantomHelper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Phantom/Editor/PhantomInspector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PhantomPackage/UI/Drawer/PhantomUIBaseDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.27/Rider/Editor/RiderScriptEditorDataPersisted.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.7.6/Editor/Undo/ApplyDefaultUndoAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Culling/ClipperRegistry.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/CanvasRenderer/ChangingHierarchyOfCanvasRenderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/InputField/CharacterLimitValidation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/InputField/ContentValidation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/TextEditor/TextEditorTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/GraphicTestHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78fe3e0b66cf40fc8dbec96aa3584483952400/61/d5558898/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78fe3e0b66cf40fc8dbec96aa3584483952400/ce/8538252d/CustomEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d26551307ee24906965335845380d4a12d400/45/bdd3e3d4/GUILayoutUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d26551307ee24906965335845380d4a12d400/d4/e27bdfc3/GUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f6650f702d1247c2a5311a89b759ba03176200/39/68b0f7b0/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -140,6 +224,7 @@
       <workItem from="1707902736684" duration="6646000" />
       <workItem from="1707969396617" duration="305000" />
       <workItem from="1707976373039" duration="13242000" />
+      <workItem from="1708050039489" duration="26005000" />
     </task>
     <servers />
   </component>

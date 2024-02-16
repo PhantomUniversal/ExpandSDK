@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
     public class PhantomSetting : ScriptableObject
     {

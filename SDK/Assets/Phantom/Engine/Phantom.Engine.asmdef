@@ -1,10 +1,9 @@
 {
-    "name": "Phantom.Editor",
-    "rootNamespace": "PhantomEditor",
+    "name": "Phantom.Engine",
+    "rootNamespace": "PhantomEngine",
     "references": [
         "GUID:478a2357cc57436488a56e564b08d223",
-        "GUID:69448af7b92c7f342b298e06a37122aa",
-        "GUID:c3e48eb6c03be594083fcecfb411a1fd"
+        "GUID:69448af7b92c7f342b298e06a37122aa"
     ],
     "includePlatforms": [
         "Editor"

@@ -1,13 +1,16 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 namespace PhantomEngine.UI
 {
+    
     public abstract class PhantomUIBase : MonoBehaviour, IUICallback
     {
 
         #region BASE
-        
-        public PhantomUIConfig eventConfig;
+
+        [SerializeField, PhantomEnum("Type")] private PhantomUIType eventType;
+        public string eventUid;
 
         #endregion
         
@@ -25,7 +28,7 @@ namespace PhantomEngine.UI
 
         private void Start()
         {
-            PhantomUI.Add(this, eventConfig ??= new PhantomUIConfig());
+            PhantomUI.Add(this, new PhantomUIConfig{ type = eventType, uid = eventUid});
         }
 
         private void OnDestroy()

@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace PhantomEngine.UI
 {
-    public abstract class PhantomUIEvent : MonoBehaviour
+    public class PhantomUIEvent : MonoBehaviour
     {
 
         #region BASE
         
-        public List<PhantomUIRequest> eventRequest;
+        [SerializeField] private List<PhantomUIListener> eventListeners;
 
         #endregion
 
@@ -18,21 +18,21 @@ namespace PhantomEngine.UI
         
         protected void Event()
         {
-            if (eventRequest is null || eventRequest.Count == 0)
+            if (eventListeners is null || eventListeners.Count == 0)
                 return;
 
-            foreach (var request in eventRequest)
+            foreach (var listener in eventListeners)
             {
-                switch ((PhantomUIStatus)request.status)
+                switch ((PhantomUIStatus)listener.status)
                 {
                     case PhantomUIStatus.Type:
-                        PhantomUI.TypeEvent(request);
+                        PhantomUI.TypeEvent(listener.config.type, listener.request);
                         break;
                     case PhantomUIStatus.Target:
-                        PhantomUI.TargetEvent(request);
+                        PhantomUI.TargetEvent(listener.config.uid, listener.request);
                         break;
                     default:
-                        PhantomUI.AllEvent(request);
+                        PhantomUI.AllEvent(listener.request);
                         break;
                 }   
             }

@@ -1,10 +1,10 @@
 ﻿#if UNITY_EDITOR
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
     public static class PhantomGUIHelper
     {
-
+        
         #region LAYOUT
 
         /// <summary>
@@ -12,6 +12,11 @@ namespace PhantomEditor
         /// </summary>
         public const float Margin = 20f;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public const float Padding = 4f;
+        
         /// <summary>
         /// 
         /// </summary>

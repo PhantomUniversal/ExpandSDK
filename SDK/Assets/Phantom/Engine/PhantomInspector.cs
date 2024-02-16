@@ -1,8 +1,8 @@
-using UnityEditor;
-
 #if UNITY_EDITOR
 
-namespace PhantomEditor
+using UnityEditor;
+
+namespace PhantomEngine
 {
     
     [CustomEditor(typeof(PhantomSetting), true)]

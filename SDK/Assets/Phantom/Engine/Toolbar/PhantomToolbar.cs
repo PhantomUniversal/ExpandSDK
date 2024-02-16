@@ -7,7 +7,7 @@ using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace PhantomEditor
+namespace PhantomEngine
 {
     [InitializeOnLoad]
     public static class PhantomToolbar
