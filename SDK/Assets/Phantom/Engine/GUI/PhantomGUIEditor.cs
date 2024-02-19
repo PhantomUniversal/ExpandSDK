@@ -22,7 +22,7 @@ namespace PhantomEngine
             EditorGUI.BeginChangeCheck();
             
             serializedObject.Update();
-            DrawPropertiesExcluding(serializedObject, new string[] { "m_Script" });
+            DrawPropertiesExcluding(serializedObject, "m_Script");
             
             PhantomGUIUtility.Repaint(this);
             OnInspector();

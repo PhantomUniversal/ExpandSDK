@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventConfig:
-    type: 0
+    type: 2
     uid: 
 --- !u!114 &1687522156
 MonoBehaviour:

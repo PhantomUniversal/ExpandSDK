@@ -2,16 +2,16 @@
 
 namespace PhantomEngine
 {
-    public class PhantomEnumAttribute : PropertyAttribute
+    public class PhantomTextAttribute : PropertyAttribute
     {
         public readonly string Label;
 
-        public PhantomEnumAttribute()
+        public PhantomTextAttribute()
         {
             Label = string.Empty;
         }
         
-        public PhantomEnumAttribute(string label)
+        public PhantomTextAttribute(string label)
         {
             Label = label;
         }

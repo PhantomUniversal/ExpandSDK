@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PhantomEngine.UI
 {
@@ -9,8 +8,7 @@ namespace PhantomEngine.UI
 
         #region BASE
 
-        [SerializeField, PhantomEnum("Type")] private PhantomUIType eventType;
-        public string eventUid;
+        [SerializeField] private PhantomUIConfig eventConfig;
 
         #endregion
         
@@ -28,7 +26,7 @@ namespace PhantomEngine.UI
 
         private void Start()
         {
-            PhantomUI.Add(this, new PhantomUIConfig{ type = eventType, uid = eventUid});
+            PhantomUI.Add(this, eventConfig);
         }
 
         private void OnDestroy()

@@ -2,12 +2,14 @@
 
 namespace PhantomEngine.UI
 {
+    // => 분해
+    
     
     [Serializable]
     public class PhantomUIConfig
     {
-        public PhantomUIType type;
-        public string uid;
+        [PhantomPopup("Type")] public PhantomUIType type;
+        [PhantomText("Uid")] public string uid;
     }
     
     [Serializable]
