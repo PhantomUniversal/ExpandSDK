@@ -11,6 +11,12 @@ namespace PhantomEngine
         #region VARIABLE
 
         // ==================================================
+        // [ Foldout ]
+        // ==================================================
+        private static GUIStyle _foldoutHeader;
+        
+        
+        // ==================================================
         // [ Label ]
         // ==================================================
         private static GUIStyle _label;
@@ -18,6 +24,14 @@ namespace PhantomEngine
         private static GUIStyle _boldLabel;
 
         private static GUIStyle _leftBoldLabel;
+        
+        
+        // ==================================================
+        // [ Text ]
+        // ==================================================
+        private static GUIStyle _text;
+        
+        private static GUIStyle _boldText;
         
         
         // ==================================================
@@ -37,6 +51,27 @@ namespace PhantomEngine
         #endregion
 
 
+
+        #region Foldout
+
+        public static GUIStyle FoldoutHeader
+        {
+            get
+            {
+                _foldoutHeader ??= new GUIStyle(EditorStyles.foldoutHeader)
+                {
+                    margin = new RectOffset(0, 0, 0, 0),
+                    clipping = TextClipping.Clip,
+                    fixedHeight = PhantomGUIHelper.Header,
+                };
+
+                return _foldoutHeader;
+            }
+        }
+
+        #endregion
+
+        
 
         #region LABEL
 
@@ -81,6 +116,40 @@ namespace PhantomEngine
             }
         }
         
+        #endregion
+
+
+
+        #region TEXT
+
+        public static GUIStyle Text
+        {
+            get
+            {
+                _text ??= new GUIStyle(GUI.skin.textField)
+                {
+                    margin = new RectOffset(0, 0, 0, 0),
+                    clipping = TextClipping.Clip,
+                    alignment = TextAnchor.MiddleLeft
+                };
+
+                return _text;
+            }
+        }
+
+        public static GUIStyle BoldText
+        {
+            get
+            {
+                _boldText ??= new GUIStyle(Text)
+                {
+                    fontStyle = FontStyle.Bold,
+                };
+
+                return _boldText;
+            }
+        }
+
         #endregion
         
         

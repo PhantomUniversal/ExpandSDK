@@ -572,9 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab01db1953d91964ebadab9fe5ce436b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventConfig:
-    type: 2
-    uid: 
+  eventType: 2
+  eventUid: 
 --- !u!114 &1687522156
 MonoBehaviour:
   m_ObjectHideFlags: 0

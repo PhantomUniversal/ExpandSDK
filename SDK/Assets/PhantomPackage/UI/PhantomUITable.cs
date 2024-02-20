@@ -2,14 +2,11 @@
 
 namespace PhantomEngine.UI
 {
-    // => 분해
-    
-    
     [Serializable]
     public class PhantomUIConfig
     {
-        [PhantomPopup("Type")] public PhantomUIType type;
-        [PhantomText("Uid")] public string uid;
+        public PhantomUIType type;
+        public string uid;
     }
     
     [Serializable]
@@ -19,7 +16,7 @@ namespace PhantomEngine.UI
         public string key;
         public string value;
     }
-
+    
     [Serializable]
     public class PhantomUIListener
     {
@@ -27,5 +24,4 @@ namespace PhantomEngine.UI
         public PhantomUIConfig config;
         public PhantomUIRequest request;
     }
-    
 }

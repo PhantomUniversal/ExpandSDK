@@ -7,9 +7,10 @@ namespace PhantomEngine.UI
     {
 
         #region BASE
-
-        [SerializeField] private PhantomUIConfig eventConfig;
-
+        
+        [Phantom("Type", PhantomAttributeStatus.ReadOnly), SerializeField] public PhantomUIType eventType;
+        [Phantom("Uid"), SerializeField] public string eventUid;
+        
         #endregion
         
         
@@ -26,7 +27,7 @@ namespace PhantomEngine.UI
 
         private void Start()
         {
-            PhantomUI.Add(this, eventConfig);
+            PhantomUI.Add(this, new PhantomUIConfig{ type = eventType, uid = eventUid});
         }
 
         private void OnDestroy()

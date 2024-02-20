@@ -33,22 +33,22 @@ namespace PhantomEngine
 
         #region READONLY
         
-        private const float ImportLength = PhantomGUIHelper.Content * 4;
+        private const float ImportLength = PhantomGUIHelper.Property * 4;
         
         private static readonly GUILayoutOption[] ImportOption 
-            = { GUILayout.Width(ImportLength), GUILayout.Height(PhantomGUIHelper.Content) };
+            = { GUILayout.Width(ImportLength), GUILayout.Height(PhantomGUIHelper.Property) };
         
         
-        private const float PublishLength = PhantomGUIHelper.Content * 3;
+        private const float PublishLength = PhantomGUIHelper.Property * 3;
         
         private static readonly GUILayoutOption[] PublishOption 
-            = { GUILayout.Width(PublishLength), GUILayout.Height(PhantomGUIHelper.Content) };
+            = { GUILayout.Width(PublishLength), GUILayout.Height(PhantomGUIHelper.Property) };
         
         
-        private const float EtcLength = PhantomGUIHelper.Content;
+        private const float EtcLength = PhantomGUIHelper.Property;
         
         private static readonly GUILayoutOption[] EtcOption 
-            = { GUILayout.Width(EtcLength), GUILayout.Height(PhantomGUIHelper.Content) };
+            = { GUILayout.Width(EtcLength), GUILayout.Height(PhantomGUIHelper.Property) };
 
         #endregion
 

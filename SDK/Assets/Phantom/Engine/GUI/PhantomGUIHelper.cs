@@ -25,12 +25,17 @@ namespace PhantomEngine
         /// <summary>
         /// 
         /// </summary>
+        public const float Header = 30f;
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public const float Label = 80f;
 
         /// <summary>
         /// 
         /// </summary>
-        public const float Content = 20f;
+        public const float Property = 20f;
 
         #endregion
 

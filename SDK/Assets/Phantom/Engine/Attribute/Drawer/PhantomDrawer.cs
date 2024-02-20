@@ -5,51 +5,38 @@ using UnityEngine;
 
 namespace PhantomEngine
 {
-    
-    public abstract class PhantomDrawer<T> : PropertyDrawer where T : PropertyAttribute
+    [CustomPropertyDrawer(typeof(PhantomAttribute), true)]
+    public sealed class PhantomDrawer : PhantomDrawerBase<PhantomAttribute>
     {
-        protected abstract void OnDrawer();
 
-        protected Rect DrawerRect;
+        #region OVERRIDE
 
-        protected T DrawerAttribute;
-        
-        protected SerializedProperty DrawerProperty;
-        
-        protected string DrawerLabel;
-        
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        protected override void OnDrawer()
         {
-            EditorGUI.BeginProperty(position, label, property);
+            SetHeight(PhantomGUIHelper.Property);
+            GUI.enabled = DrawerAttribute.EventStatus != PhantomAttributeStatus.ReadOnly;
             
-            bool enable = string.IsNullOrEmpty(DrawerLabel);
-            position.x += enable ? 0 : PhantomGUIHelper.Label;  
-            position.width = enable ? position.width : position.width - PhantomGUIHelper.Label;
-            position.height = PhantomGUIHelper.Content;
-            DrawerRect = position;
-            
-            if (!enable)
+            if (DrawerAttribute.EventStatus != PhantomAttributeStatus.Full)
             {
-                position.x -= PhantomGUIHelper.Label;
-                position.width = PhantomGUIHelper.Label;
-                position.height = PhantomGUIHelper.Content;
-                GUI.Label(position, DrawerLabel, PhantomGUIStyle.LeftBoldLabel);
+                string baseLabel = string.IsNullOrEmpty(DrawerAttribute.EventLabel) ? DrawerContent.text : DrawerAttribute.EventLabel;
+                PhantomGUI.CustomLabel(PhantomGUIExtension.Label(DrawerRect), baseLabel);
             }
 
-            DrawerAttribute = attribute as T;
-            if (DrawerAttribute is not null)
+            Rect baseRect = DrawerAttribute.EventStatus == PhantomAttributeStatus.Full ? DrawerRect : PhantomGUIExtension.Property(DrawerRect);
+            switch (DrawerProperty.propertyType)
             {
-                DrawerProperty = property;
-                OnDrawer();    
+                case SerializedPropertyType.String:
+                    DrawerProperty.stringValue = PhantomGUI.CustomText(baseRect, DrawerProperty.stringValue);                
+                    break;
+                case SerializedPropertyType.Enum:
+                    DrawerProperty.intValue = PhantomGUI.CustomPopup(baseRect, DrawerProperty.intValue, DrawerProperty.enumDisplayNames);
+                    break;
             }
-            
-            EditorGUI.EndProperty();
+
+            GUI.enabled = true;
         }
 
-        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-        {
-            return PhantomGUIHelper.Content;
-        }
+        #endregion
     }
 }
 

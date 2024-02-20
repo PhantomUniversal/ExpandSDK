@@ -8,19 +8,23 @@ namespace PhantomEngine
 
         #region RECT
 
+        // ==================================================
+        // [ Line ]
+        // ==================================================
+        
         /// <summary>
-        /// Left rect
+        /// Left line rect
         /// </summary>
-        public static Rect Left(Rect rect, float length = 1)
+        public static Rect LeftLine(Rect rect, float length = 1)
         {
             rect.width = length;
             return rect;
         }
         
         /// <summary>
-        /// Right rect
+        /// Right line rect
         /// </summary>
-        public static Rect Right(Rect rect, float length = 1)
+        public static Rect RightLine(Rect rect, float length = 1)
         {
             rect.x += rect.width - length;
             rect.width = length;
@@ -30,7 +34,7 @@ namespace PhantomEngine
         /// <summary>
         /// Top rect
         /// </summary>
-        public static Rect Top(Rect rect, float length = 1)
+        public static Rect TopLine(Rect rect, float length = 1)
         {
             rect.height = length;
             return rect;
@@ -39,17 +43,22 @@ namespace PhantomEngine
         /// <summary>
         /// Bottom rect 
         /// </summary>
-        public static Rect Bottom(Rect rect, float length = 1)
+        public static Rect BottomLine(Rect rect, float length = 1)
         {
             rect.y += rect.height - length;
             rect.height = length;
             return rect;
         }
         
+        
+        // ==================================================
+        // [ Window ]
+        // ==================================================
+        
         /// <summary>
         /// Window size resolution
         /// </summary>
-        public static Rect Window(Vector2 size)
+        public static Rect WindowSize(Vector2 size)
         {
             var position = EditorWindow.GetWindow<SceneView>().position;
             var x = position.x + (position.width - (size.x * 0.5f));
@@ -57,6 +66,26 @@ namespace PhantomEngine
             return new Rect(x, y, size.x, size.y);
         }
 
+        
+        // ==================================================
+        // [ GUI ]
+        // ==================================================
+        public static Rect Header(Rect rect)
+        {
+            return new Rect(rect.x, rect.y, rect.width, PhantomGUIHelper.Header);
+        }
+        
+        public static Rect Label(Rect rect)
+        {
+            return new Rect(rect.x, rect.y, PhantomGUIHelper.Label, PhantomGUIHelper.Property);
+        }
+
+        public static Rect Property(Rect rect)
+        {
+            return new Rect(rect.x + PhantomGUIHelper.Label, rect.y, rect.width - PhantomGUIHelper.Label, rect.height);
+        }
+        
+        
         #endregion
         
     }
