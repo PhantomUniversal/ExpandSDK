@@ -13,16 +13,15 @@ namespace PhantomEngine
 
         protected override void OnDrawer()
         {
-            SetHeight(PhantomGUIHelper.Property);
-            GUI.enabled = DrawerAttribute.EventStatus != PhantomAttributeStatus.ReadOnly;
-            
-            if (DrawerAttribute.EventStatus != PhantomAttributeStatus.Full)
+            GUI.enabled = !DrawerAttribute.EventReadonly;
+
+            bool enable = string.IsNullOrEmpty(DrawerAttribute.EventLabel); 
+            if (!enable)
             {
-                string baseLabel = string.IsNullOrEmpty(DrawerAttribute.EventLabel) ? DrawerContent.text : DrawerAttribute.EventLabel;
-                PhantomGUI.CustomLabel(PhantomGUIExtension.Label(DrawerRect), baseLabel);
+                PhantomGUI.CustomLabel(PhantomGUIExtension.Label(DrawerRect), DrawerAttribute.EventLabel);
             }
 
-            Rect baseRect = DrawerAttribute.EventStatus == PhantomAttributeStatus.Full ? DrawerRect : PhantomGUIExtension.Property(DrawerRect);
+            Rect baseRect = enable ? DrawerRect : PhantomGUIExtension.Property(DrawerRect);
             switch (DrawerProperty.propertyType)
             {
                 case SerializedPropertyType.String:

@@ -1,5 +1,7 @@
 ﻿#if UNITY_EDITOR
 
+using UnityEngine;
+
 namespace PhantomEngine
 {
     public static class PhantomGUIHelper
@@ -10,33 +12,44 @@ namespace PhantomEngine
         /// <summary>
         /// 
         /// </summary>
-        public const float Margin = 20f;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public const float Padding = 4f;
+        public static readonly RectOffset LayoutOffset = new(0, 0, 0, 0);
         
         /// <summary>
         /// 
         /// </summary>
-        public const float Space = 10f;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public const float Header = 30f;
+        public const float LayoutMargin = 20f;
         
         /// <summary>
         /// 
         /// </summary>
-        public const float Label = 80f;
+        public const float LayoutSpace = 10f;
 
         /// <summary>
         /// 
         /// </summary>
-        public const float Property = 20f;
+        public const float LayoutHeader = 30f;
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        public const float LayoutLabel = 80f;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public const float LayoutProperty = 20f;
+
+        #endregion
+
+
+
+        #region FONT
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public const int FontSize = 12;
+        
         #endregion
 
     }

@@ -5,33 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="052d4373-0d20-4d17-8e79-09128fe600ee" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomDrawerBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomDrawerBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeEnum.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIColor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIColor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIInspector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIInspector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomTemp/Scene/Temp.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomTemp/Scene/Temp.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomTemp/Script/TempEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomTemp/Script/TempEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomTemp/Script/TempManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PhantomTemp/Script/TempManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SDK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDK/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomDrawer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomPopupDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomPopupDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomTextDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomTextDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomPopupAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomPopupAttribute.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttribute.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomTextAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomTextAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomDrawerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomDrawerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeEnum.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeEnum.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIExtension.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIStyle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIStyle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomNote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/PhantomNote.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Toolbar/PhantomToolbar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Toolbar/PhantomToolbar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUICanvasGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUICanvasGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIDrawer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIDrawer.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUITable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUITable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomTemp/Scene/Example.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhantomTemp/Scene/Example.unity.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +47,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PhantomTemp/Script/TempEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.27/Rider/Editor/RiderScriptEditorDataPersisted.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.7.6/Editor/Undo/ApplyDefaultUndoAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Culling/ClipperRegistry.cs" root0="SKIP_HIGHLIGHTING" />
@@ -153,6 +158,7 @@
       <workItem from="1708050039489" duration="26005000" />
       <workItem from="1708309068741" duration="17665000" />
       <workItem from="1708394838943" duration="33289000" />
+      <workItem from="1708481656931" duration="28116000" />
     </task>
     <servers />
   </component>

@@ -72,17 +72,17 @@ namespace PhantomEngine
         // ==================================================
         public static Rect Header(Rect rect)
         {
-            return new Rect(rect.x, rect.y, rect.width, PhantomGUIHelper.Header);
+            return new Rect(rect.x, rect.y, rect.width, PhantomGUIHelper.LayoutHeader);
         }
         
         public static Rect Label(Rect rect)
         {
-            return new Rect(rect.x, rect.y, PhantomGUIHelper.Label, PhantomGUIHelper.Property);
+            return new Rect(rect.x, rect.y, PhantomGUIHelper.LayoutLabel, PhantomGUIHelper.LayoutProperty);
         }
 
         public static Rect Property(Rect rect)
         {
-            return new Rect(rect.x + PhantomGUIHelper.Label, rect.y, rect.width - PhantomGUIHelper.Label, rect.height);
+            return new Rect(rect.x + PhantomGUIHelper.LayoutLabel, rect.y, rect.width - PhantomGUIHelper.LayoutLabel, PhantomGUIHelper.LayoutProperty);
         }
         
         

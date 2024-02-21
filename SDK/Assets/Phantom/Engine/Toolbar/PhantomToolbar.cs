@@ -32,23 +32,23 @@ namespace PhantomEngine
 
 
         #region READONLY
-        
-        private const float ImportLength = PhantomGUIHelper.Property * 4;
+
+        private const float ImportLength = PhantomGUIHelper.LayoutProperty * 4;
         
         private static readonly GUILayoutOption[] ImportOption 
-            = { GUILayout.Width(ImportLength), GUILayout.Height(PhantomGUIHelper.Property) };
+            = { GUILayout.Width(ImportLength), GUILayout.Height(PhantomGUIHelper.LayoutProperty) };
         
         
-        private const float PublishLength = PhantomGUIHelper.Property * 3;
+        private const float PublishLength = PhantomGUIHelper.LayoutProperty * 3;
         
         private static readonly GUILayoutOption[] PublishOption 
-            = { GUILayout.Width(PublishLength), GUILayout.Height(PhantomGUIHelper.Property) };
+            = { GUILayout.Width(PublishLength), GUILayout.Height(PhantomGUIHelper.LayoutProperty) };
         
         
-        private const float EtcLength = PhantomGUIHelper.Property;
+        private const float EtcLength = PhantomGUIHelper.LayoutProperty;
         
         private static readonly GUILayoutOption[] EtcOption 
-            = { GUILayout.Width(EtcLength), GUILayout.Height(PhantomGUIHelper.Property) };
+            = { GUILayout.Width(EtcLength), GUILayout.Height(PhantomGUIHelper.LayoutProperty) };
 
         #endregion
 
@@ -118,7 +118,7 @@ namespace PhantomEngine
         private static void OnGUI()
         {
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.Space(PhantomGUIHelper.Margin);
+            EditorGUILayout.Space(PhantomGUIHelper.LayoutMargin);
             
             if (!_toolbarEnable)
             {
@@ -171,8 +171,8 @@ namespace PhantomEngine
         private static void Etc()
         {
             Rect lastRect = GUILayoutUtility.GetLastRect();
-            lastRect.x += PhantomGUIHelper.Margin + PublishLength;
-            lastRect.y += PhantomGUIHelper.Margin;
+            lastRect.x += PhantomGUIHelper.LayoutMargin + PublishLength;
+            lastRect.y += PhantomGUIHelper.LayoutMargin;
             
             GenericMenu menu = new GenericMenu();
             ProfileMenu(menu);

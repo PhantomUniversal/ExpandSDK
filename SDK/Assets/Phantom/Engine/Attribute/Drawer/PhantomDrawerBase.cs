@@ -51,7 +51,6 @@ namespace PhantomEngine
         {
             EditorGUI.BeginProperty(position, label, property);
             
-            Debug.Log(position.height);
             DrawerRect = position;
             DrawerProperty = property;
             DrawerContent = label;
@@ -88,22 +87,6 @@ namespace PhantomEngine
 
         
         
-        #region HEIGHT
-
-        private float DrawerHeight { get; set; } = 1;
-        
-        /// <summary>
-        /// Custom size
-        /// </summary>
-        protected void SetHeight(float height)
-        {
-            DrawerHeight = height;
-        }
-
-        #endregion
-
-        
-        
         #region ABSTRACT
 
         protected abstract void OnDrawer();
@@ -133,7 +116,7 @@ namespace PhantomEngine
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return DrawerHeight;
+            return PhantomGUIHelper.LayoutProperty;
         }
 
         #endregion

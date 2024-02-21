@@ -7,12 +7,20 @@ namespace PhantomEngine
 {
     public static class PhantomGUIStyle
     {
-
+        
         #region VARIABLE
-
+        
+        // ==================================================
+        // [ Box ]
+        // ==================================================
+        private static GUIStyle _box;
+        
+        
         // ==================================================
         // [ Foldout ]
         // ==================================================
+        private static GUIStyle _foldout;
+        
         private static GUIStyle _foldoutHeader;
         
         
@@ -31,7 +39,7 @@ namespace PhantomEngine
         // ==================================================
         private static GUIStyle _text;
         
-        private static GUIStyle _boldText;
+        private static GUIStyle _leftText;
         
         
         // ==================================================
@@ -52,23 +60,71 @@ namespace PhantomEngine
 
 
 
-        #region Foldout
+        #region BOX
 
+        public static GUIStyle Box
+        {
+            get
+            {
+                _box ??= new GUIStyle(GUI.skin.box)
+                {
+                    margin = PhantomGUIHelper.LayoutOffset,
+                    clipping = TextClipping.Clip,
+                };
+
+                return _box;
+            }
+        }
+
+        
+        #endregion
+        
+        
+
+
+        #region FOLDOUT
+
+        public static GUIStyle Foldout
+        {
+            get
+            {
+                _foldout ??= new GUIStyle(EditorStyles.foldout)
+                {
+                    padding = new RectOffset(16, 0, 0, 0), 
+                    margin = new RectOffset(4, 0, 0, 0),
+                    clipping = TextClipping.Clip,
+                    alignment = TextAnchor.MiddleLeft
+                };
+
+                return _foldout;
+            }
+        }
+        
         public static GUIStyle FoldoutHeader
         {
             get
             {
-                _foldoutHeader ??= new GUIStyle(EditorStyles.foldoutHeader)
+                _foldoutHeader ??= new GUIStyle(Foldout)
                 {
-                    margin = new RectOffset(0, 0, 0, 0),
-                    clipping = TextClipping.Clip,
-                    fixedHeight = PhantomGUIHelper.Header,
+                    fontSize = PhantomGUIHelper.FontSize,
+                    fontStyle = FontStyle.Bold,
+                    
+                    normal = new GUIStyleState()
+                    {
+                        textColor = PhantomGUIColor.NormalTextColor
+                    },
+                    
+                    onNormal = new GUIStyleState()
+                    {
+                        textColor = PhantomGUIColor.SelectTextColor
+                    }
                 };
 
                 return _foldoutHeader;
             }
         }
 
+        
         #endregion
 
         
@@ -82,7 +138,7 @@ namespace PhantomEngine
                 _label ??= new GUIStyle(GUI.skin.label)
                 {
                     padding = new RectOffset(2, 0, 0, 4), 
-                    margin = new RectOffset(0, 0, 0, 0),
+                    margin = PhantomGUIHelper.LayoutOffset,
                     clipping = TextClipping.Clip,
                 };
 
@@ -128,25 +184,24 @@ namespace PhantomEngine
             {
                 _text ??= new GUIStyle(GUI.skin.textField)
                 {
-                    margin = new RectOffset(0, 0, 0, 0),
-                    clipping = TextClipping.Clip,
-                    alignment = TextAnchor.MiddleLeft
+                    margin = PhantomGUIHelper.LayoutOffset,
+                    clipping = TextClipping.Clip
                 };
 
                 return _text;
             }
         }
 
-        public static GUIStyle BoldText
+        public static GUIStyle LeftText
         {
             get
             {
-                _boldText ??= new GUIStyle(Text)
+                _leftText ??= new GUIStyle(Text)
                 {
-                    fontStyle = FontStyle.Bold,
+                    alignment = TextAnchor.MiddleLeft
                 };
 
-                return _boldText;
+                return _leftText;
             }
         }
 
@@ -162,7 +217,7 @@ namespace PhantomEngine
             {
                 _button ??= new GUIStyle(GUI.skin.button)
                 {
-                    margin = new RectOffset(0, 0, 0, 0),
+                    margin = PhantomGUIHelper.LayoutOffset,
                     clipping = TextClipping.Clip,
                     alignment = TextAnchor.MiddleCenter
                 };
@@ -196,9 +251,9 @@ namespace PhantomEngine
             {
                 _popup ??= new GUIStyle(EditorStyles.popup)
                 {
-                    margin = new RectOffset(0, 0, 0, 0),
+                    margin = PhantomGUIHelper.LayoutOffset,
                     clipping = TextClipping.Clip,
-                    fixedHeight = 20f,
+                    fixedHeight = PhantomGUIHelper.LayoutProperty
                 };
 
                 return _popup;

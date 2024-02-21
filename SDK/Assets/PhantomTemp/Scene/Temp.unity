@@ -536,7 +536,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1687522154}
-  - component: {fileID: 1687522156}
   - component: {fileID: 1687522155}
   m_Layer: 0
   m_Name: GameManager
@@ -574,27 +573,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventType: 2
   eventUid: 
---- !u!114 &1687522156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687522153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66c33fa9a0194fb387f092cc8a465077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventListeners:
-  - status: 0
-    config:
-      type: 0
-      uid: 
-    request:
-      hash: 0
-      key: 
-      value: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

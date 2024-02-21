@@ -6,9 +6,9 @@ namespace PhantomEngine
 {
     public abstract class PhantomGUIEditor : Editor
     {
-
+        
         #region OVERRIDE
-
+        
         protected abstract void OnInspector();
 
         #endregion
@@ -20,12 +20,14 @@ namespace PhantomEngine
         public override void OnInspectorGUI()
         {
             EditorGUI.BeginChangeCheck();
-            
             serializedObject.Update();
-            DrawPropertiesExcluding(serializedObject, "m_Script");
             
-            PhantomGUIUtility.Repaint(this);
+            PhantomGUI.BeginGroupLayout();
+            
             OnInspector();
+            PhantomGUIUtility.Repaint(this);
+            
+            PhantomGUI.EndGroupLayout();
             
             if (EditorGUI.EndChangeCheck())
             {

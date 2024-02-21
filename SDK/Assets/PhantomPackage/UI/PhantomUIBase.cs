@@ -2,13 +2,12 @@
 
 namespace PhantomEngine.UI
 {
-    
     public abstract class PhantomUIBase : MonoBehaviour, IUICallback
     {
 
         #region BASE
-        
-        [Phantom("Type", PhantomAttributeStatus.ReadOnly), SerializeField] public PhantomUIType eventType;
+
+        [Phantom("Type", true), SerializeField] public PhantomUIType eventType;
         [Phantom("Uid"), SerializeField] public string eventUid;
         
         #endregion
@@ -16,7 +15,9 @@ namespace PhantomEngine.UI
         
         
         #region OVERRIDE
-
+        
+        protected abstract void OnBind();
+        
         protected abstract void OnEvent(PhantomUIRequest request);
 
         #endregion
@@ -25,9 +26,24 @@ namespace PhantomEngine.UI
         
         #region LIFECYCLE
 
+#if UNITY_EDITOR
+
+        [ContextMenu("Bind")]
+        private void OnValidate()
+        {
+            OnBind();
+        }
+
+#endif
+
+        private void Awake()
+        {
+            OnBind();
+        }
+
         private void Start()
         {
-            PhantomUI.Add(this, new PhantomUIConfig{ type = eventType, uid = eventUid});
+            PhantomUI.Add(this, new PhantomUIConfig{ type = eventType, uid = eventUid });
         }
 
         private void OnDestroy()

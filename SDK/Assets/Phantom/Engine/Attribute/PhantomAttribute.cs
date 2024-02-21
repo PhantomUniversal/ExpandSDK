@@ -1,22 +1,21 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PhantomEngine
 {
     public class PhantomAttribute : PropertyAttribute
     {
-        public readonly PhantomAttributeStatus EventStatus;
+        public readonly bool EventReadonly;
         public readonly string EventLabel;
         
-        public PhantomAttribute(PhantomAttributeStatus status = PhantomAttributeStatus.None)
+        public PhantomAttribute(bool enable = false)
         {
-            EventStatus = status;
+            EventReadonly = enable;
             EventLabel = string.Empty;
         }
-        
-        public PhantomAttribute(string label = "", PhantomAttributeStatus status = PhantomAttributeStatus.None)
+
+        public PhantomAttribute(string label, bool enable = false)
         {
-            EventStatus = status;
+            EventReadonly = enable;
             EventLabel = label;
         }
     }
