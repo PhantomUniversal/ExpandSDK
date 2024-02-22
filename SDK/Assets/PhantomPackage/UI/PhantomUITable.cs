@@ -1,13 +1,12 @@
 ﻿using System;
-using UnityEngine;
 
 namespace PhantomEngine.UI
 {
     [Serializable]
     public class PhantomUIConfig
     {
-        [Phantom("Type", true), SerializeField] public PhantomUIType type;
-        [Phantom("Uid"), SerializeField] public string uid;
+        public string type;
+        public string uid;
     }
     
     [Serializable]

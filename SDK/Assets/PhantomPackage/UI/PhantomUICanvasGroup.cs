@@ -20,17 +20,11 @@ namespace PhantomEngine.UI
     #endif
     
     
-    public class PhantomUICanvasGroup : PhantomUIBase
+    public class PhantomUICanvasGroup : MonoBehaviour, IUIObserver
     {
-        protected override void OnBind()
-        {
-            eventType = PhantomUIType.CanvasGroup;
-        }
-
-        protected override void OnEvent(PhantomUIRequest request)
+        public void OnEvent(PhantomUIRequest request)
         {
             
         }
-        
     }
 }

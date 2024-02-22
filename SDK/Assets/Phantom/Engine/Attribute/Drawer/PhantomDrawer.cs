@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace PhantomEngine
 {
-    [CustomPropertyDrawer(typeof(PhantomAttribute), true)]
+    [CustomPropertyDrawer(typeof(PhantomAttribute))]
     public sealed class PhantomDrawer : PhantomDrawerBase<PhantomAttribute>
     {
 
@@ -13,29 +13,21 @@ namespace PhantomEngine
 
         protected override void OnDrawer()
         {
-            GUI.enabled = !DrawerAttribute.EventReadonly;
-
-            bool enable = string.IsNullOrEmpty(DrawerAttribute.EventLabel); 
-            if (!enable)
-            {
-                PhantomGUI.CustomLabel(PhantomGUIExtension.Label(DrawerRect), DrawerAttribute.EventLabel);
-            }
-
-            Rect baseRect = enable ? DrawerRect : PhantomGUIExtension.Property(DrawerRect);
+            DrawerContent.text = string.IsNullOrEmpty(DrawerAttribute.EventLabel) ? DrawerContent.text : DrawerAttribute.EventLabel;
             switch (DrawerProperty.propertyType)
             {
                 case SerializedPropertyType.String:
-                    DrawerProperty.stringValue = PhantomGUI.CustomText(baseRect, DrawerProperty.stringValue);                
+                    DrawerProperty.stringValue =
+                        EditorGUI.TextField(DrawerRect, DrawerContent, DrawerProperty.stringValue);                
                     break;
-                case SerializedPropertyType.Enum:
-                    DrawerProperty.intValue = PhantomGUI.CustomPopup(baseRect, DrawerProperty.intValue, DrawerProperty.enumDisplayNames);
-                    break;
+                // case SerializedPropertyType.Enum:
+                //     DrawerProperty.intValue = PhantomGUI.CustomPopup(baseRect, DrawerProperty.intValue, DrawerProperty.enumDisplayNames);
+                //     break;
             }
-
-            GUI.enabled = true;
         }
 
         #endregion
+        
     }
 }
 

@@ -1,9 +1,31 @@
 ﻿namespace PhantomEngine.UI
 {
-    public interface IUICallback
+
+    public interface IUISubject
     {
 
-        void OnEventCallback(PhantomUIRequest request);
+        /// <summary>
+        /// 
+        /// </summary>
+        void OnBind();
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        void OnObserver(PhantomUIRequest request);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        void OnClear();
 
     }
+    
+    public interface IUIObserver
+    {
+
+        void OnEvent(PhantomUIRequest request);
+
+    }
+    
 }

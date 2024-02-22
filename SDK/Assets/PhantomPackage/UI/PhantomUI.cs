@@ -10,7 +10,7 @@ namespace PhantomEngine.UI
         
         #region PROPERTY
 
-        private static Dictionary<IUICallback, PhantomUIConfig> _container;
+        private static Dictionary<IUISubject, PhantomUIConfig> _container;
     
         private static bool IsContainer => _container is { Count: > 0 };
     
@@ -24,10 +24,10 @@ namespace PhantomEngine.UI
         
         public static bool Add(object callback, PhantomUIConfig config)
         {
-            if (callback is not IUICallback target)
+            if (callback is not IUISubject target)
                 return false;
 
-            _container ??= new Dictionary<IUICallback, PhantomUIConfig>();
+            _container ??= new Dictionary<IUISubject, PhantomUIConfig>();
             config ??= new PhantomUIConfig();
             config.uid = GeneratorUid(config.uid);
 
@@ -36,7 +36,7 @@ namespace PhantomEngine.UI
 
         public static bool Remove(object callback)
         {
-            if (callback is not IUICallback target)
+            if (callback is not IUISubject target)
                 return false;
 
             if (!IsContainer || !_container.ContainsKey(target))
@@ -76,14 +76,14 @@ namespace PhantomEngine.UI
                 _container = null;
         }
 
-        public static IUICallback Find(string uid)
+        public static IUISubject Find(string uid)
         {
             return !IsContainer ? null : _container.FirstOrDefault(x => x.Value.uid == uid).Key;
         }
 
         public static bool Exist(object callback)
         {
-            if (callback is not IUICallback target)
+            if (callback is not IUISubject target)
                 return false;
         
             return IsContainer && _container.ContainsKey(target);
@@ -95,25 +95,25 @@ namespace PhantomEngine.UI
 
         #region EVENT
 
-        public static void AllEvent(PhantomUIRequest request)
+        public static void Event(PhantomUIRequest request)
         {
             if (!IsContainer)
                 return;
 
             foreach (var target in _container)
             {
-                target.Key.OnEventCallback(request);
+                target.Key.OnObserver(request);
             }
         }
 
-        public static void TypeEvent(PhantomUIType type, PhantomUIRequest request)
+        public static void TypeEvent(string type, PhantomUIRequest request)
         {
             if (!IsContainer)
                 return;
 
-            if (type == PhantomUIType.None)
+            if (string.IsNullOrEmpty(type))
             {
-                AllEvent(request);
+                Event(request);
                 return;
             }
             
@@ -122,7 +122,7 @@ namespace PhantomEngine.UI
                 if(target.Value.type != type)
                     continue;
                 
-                target.Key.OnEventCallback(request);
+                target.Key.OnObserver(request);
             }
         }
         
@@ -136,7 +136,7 @@ namespace PhantomEngine.UI
                 if (target.Value.uid != uid) 
                     continue;
                 
-                target.Key.OnEventCallback(request);
+                target.Key.OnObserver(request);
                 break;
             }
         }

@@ -32,7 +32,7 @@ namespace PhantomEngine.UI
                         PhantomUI.TargetEvent(listener.config.uid, listener.request);
                         break;
                     default:
-                        PhantomUI.AllEvent(listener.request);
+                        PhantomUI.Event(listener.request);
                         break;
                 }   
             }
