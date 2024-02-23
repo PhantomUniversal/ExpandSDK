@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PhantomEngine.UI
 {
@@ -7,10 +6,12 @@ namespace PhantomEngine.UI
     {
 
         #region CONFIG
-
-        [Label("Type"), SerializeField] public string eventType;
-        [Label("Type"), SerializeField] public string eventUid;
+        
+        [SerializeField, FoldoutGroup("zz")] public string eventType;
+        [SerializeField] public string eventUid;
         //[SerializeField] public List<Object> eventObserver;
+        
+        public string EventString { get; set; }
         
         #endregion
         

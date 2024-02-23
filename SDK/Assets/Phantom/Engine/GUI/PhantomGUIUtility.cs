@@ -2,6 +2,7 @@
 
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace PhantomEngine
 {
@@ -67,7 +68,7 @@ namespace PhantomEngine
         }
 
         #endregion
-
+        
     }
 }
 

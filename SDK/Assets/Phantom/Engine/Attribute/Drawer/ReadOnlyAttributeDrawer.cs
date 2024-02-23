@@ -8,7 +8,6 @@ namespace PhantomEngine
         protected override void OnDrawer()
         {
             EditorGUI.BeginDisabledGroup(true);
-            //EditorGUI.PropertyField(DrawerRect, DrawerProperty, DrawerContent, true);
             EditorGUI.EndDisabledGroup();
         }
     }
