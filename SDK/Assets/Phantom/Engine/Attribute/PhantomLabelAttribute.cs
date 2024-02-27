@@ -6,13 +6,15 @@ namespace PhantomEngine
 {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
     [Conditional("UNITY_EDITOR")]
-    public class LabelAttribute : PropertyAttribute
+    public class PhantomLabelAttribute : PropertyAttribute
     {
         public readonly string EventLabel;
+        public readonly int EventOption;
         
-        public LabelAttribute(string label)
+        public PhantomLabelAttribute(string label, int option = 80)
         {
             EventLabel = label;
+            EventOption = option;
         }
     }
 }

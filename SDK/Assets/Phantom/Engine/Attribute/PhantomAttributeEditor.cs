@@ -12,11 +12,25 @@ namespace PhantomEngine
     public class PhantomAttributeEditor : PhantomGUIEditor
     {
 
+        #region READONLY
+
+        private const BindingFlags AttributeFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.DeclaredOnly;
+
+        #endregion
+        
+        
+        
         #region VARIABLE
 
+        /// <summary>
+        /// Class all property
+        /// </summary>
         private List<SerializedProperty> _attributeProperties;
 
-        private List<PhantomAttributeTable> _attributeTables;
+        /// <summary>
+        /// Attribute key = label, value = table
+        /// </summary>
+        private Dictionary<string, PhantomAttributeTable> _attributeTables;
         
         #endregion
 
@@ -24,7 +38,7 @@ namespace PhantomEngine
 
         #region PROPERTY
         
-        // IPhantomAttribute를 가지고 있는
+        // Class exist attribute `IPhantomAttribute'
         private bool IsAttribute
         {
             get
@@ -66,7 +80,7 @@ namespace PhantomEngine
             {
                 foreach (var property in _attributeProperties)
                 {
-                    FieldInfo propertyField = target.GetType().GetField(property.name, EditorFlags);
+                    FieldInfo propertyField = target.GetType().GetField(property.name, AttributeFlags);
                     if (propertyField == null)
                         continue;
 
@@ -86,7 +100,7 @@ namespace PhantomEngine
                     }
                 }
                 
-                //DrawAttribute();
+                DrawAttribute();
             }
             else
             {
@@ -100,87 +114,89 @@ namespace PhantomEngine
 
         #region INSPECTOR
         
-        // BUG => 추가시키는게 지속적으로 계속 추가되고 있음!
-        
         private void SetAttribute(PhantomAttributeType type, string label, SerializedProperty property)
         {
-            _attributeTables ??= new List<PhantomAttributeTable>();
-            PhantomAttributeTable table = _attributeTables.Find(x => x.eventLabel == label);
-            if (table is null)
+            _attributeTables ??= new Dictionary<string, PhantomAttributeTable>();
+            if (_attributeTables.ContainsKey(label))
             {
-                _attributeTables.Add(new PhantomAttributeTable
+                if(!_attributeTables[label].eventProperties.Contains(property))
+                    _attributeTables[label].eventProperties.Add(property);
+            }
+            else
+            {
+                _attributeTables.Add(label, new PhantomAttributeTable
                 {
                     eventType = type,
                     eventEnable = false,
                     eventLabel = label,
-                    eventProperties = new List<SerializedProperty>
+                    eventProperties = new List<SerializedProperty>()
                     {
                         property
                     }
                 });
             }
-            else
+        }
+
+        private void DrawAttribute()
+        {
+            if (_attributeTables is null || _attributeTables.Count == 0)
+                return;
+
+            foreach (var table in _attributeTables)
             {
-                table.eventProperties.Add(property);
+                switch (table.Value.eventType)
+                {
+                    case PhantomAttributeType.Foldout:
+                        DrawFoldout(table.Value);
+                        break;
+                    case PhantomAttributeType.None:
+                        DrawProperty(table.Value);
+                        break;
+                }
+            }
+        }
+        
+        #endregion
+
+
+
+        #region DRAW
+
+        private void DrawProperty(PhantomAttributeTable table)
+        {
+            foreach (var property in table.eventProperties)
+            {
+                EditorGUILayout.PropertyField(property);
             }
         }
 
-        // private void DrawAttribute()
-        // {
-        //     if (_attributeTables is null || _attributeTables.Count == 0)
-        //         return;
-        //     
-        //     for (int i = 0; i < _attributeTables.Count; i++)
-        //     {
-        //         switch (_attributeTables[i].eventType)
-        //         {
-        //             case PhantomAttributeType.Foldout:
-        //                 DrawFoldout(i);
-        //                 break;
-        //             default:
-        //                 DrawProperty(i);
-        //                 break;
-        //         }
-        //     }
-        // }
-        
-        // private void DrawProperty(int index)
-        // {
-        //     foreach (var property in _attributeTables[index].eventProperties)
-        //     {
-        //         EditorGUILayout.PropertyField(property);
-        //     }
-        // }
-        //
-        // private void DrawFoldout(int index)
-        // {
-        //     _attributeTables[index].eventEnable = PhantomGUI.Foldout(_attributeTables[index].eventEnable, _attributeTables[index].eventLabel);
-        //     if (!_attributeTables[index].eventEnable) 
-        //         return;
-        //     
-        //     foreach (var property in _attributeTables[index].eventProperties)
-        //     {
-        //         EditorGUILayout.PropertyField(property);
-        //     }
-        // }
-        
+        private void DrawFoldout(PhantomAttributeTable table)
+        {
+            table.eventEnable = PhantomGUI.Foldout(table.eventEnable, table.eventLabel);
+            if (!table.eventEnable) 
+                return;
+            
+            foreach (var property in table.eventProperties)
+            {
+                EditorGUILayout.PropertyField(property);
+            }
+        }
+
         #endregion
         
         
         
         #region UTILITY
-
-        private const BindingFlags EditorFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.DeclaredOnly;
         
         private FieldInfo[] GetFields()
         {
-            return target.GetType().GetFields(EditorFlags);
+            return target.GetType().GetFields(AttributeFlags);
         }
         
-        private PropertyInfo[] GetProperties()
-        {
-            return target.GetType().GetProperties(EditorFlags);
-        }
+        // private PropertyInfo[] GetProperties()
+        // {
+        //     return target.GetType().GetProperties(AttributeFlags);
+        // }
         
         private void GetSerializedProperties(ref List<SerializedProperty> serializedProperties)
         {

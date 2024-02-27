@@ -6,7 +6,7 @@ namespace PhantomEngine
 {
     [AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = true)]
     [Conditional("UNITY_EDITOR")]
-    public class ReadOnlyAttribute : PropertyAttribute
+    public class PhantomReadOnlyAttribute : PropertyAttribute
     {
         
     }

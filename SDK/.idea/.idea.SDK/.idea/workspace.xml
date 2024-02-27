@@ -5,27 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="052d4373-0d20-4d17-8e79-09128fe600ee" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeBase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeEnum.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeRoot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeRoot.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeTable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeTable.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SDK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/FoldoutGroupDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/FoldoutGroupDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/FoldoutGroupAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomFoldoutAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/FoldoutGroupAttribute.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomFoldoutAttribute.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/LabelAttributeDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomLabelAttributeDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/LabelAttributeDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomLabelAttributeDrawer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/ReadOnlyAttributeDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomReadOnlyAttributeDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/ReadOnlyAttributeDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/Drawer/PhantomReadOnlyAttributeDrawer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/LabelAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomLabelAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/LabelAttribute.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomLabelAttribute.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomAttributeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/GUI/PhantomGUIUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Resource/So.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Resource/So/PhantomSetting.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Resource/So/PhantomSetting.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/ReadOnlyAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomReadOnlyAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/ReadOnlyAttribute.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Engine/Attribute/PhantomReadOnlyAttribute.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIObserver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhantomPackage/UI/PhantomUIObserver.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,6 +147,7 @@
       <workItem from="1708567529599" duration="21248000" />
       <workItem from="1708653868567" duration="17473000" />
       <workItem from="1708913463315" duration="29631000" />
+      <workItem from="1708999251433" duration="6310000" />
     </task>
     <servers />
   </component>
