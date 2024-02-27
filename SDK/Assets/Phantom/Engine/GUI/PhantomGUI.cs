@@ -103,7 +103,7 @@ namespace PhantomEngine
         {
             if (repaint)
             {
-                PhantomGUIUtility.UpdateRepaint(rect.height);    
+                PhantomGUIUtility.RepaintUpdate(rect.height);    
             }
          
             CustomHelpBox(rect);
@@ -134,7 +134,7 @@ namespace PhantomEngine
         {
             if (repaint)
             {
-                PhantomGUIUtility.UpdateRepaint(rect.height);    
+                PhantomGUIUtility.RepaintUpdate(rect.height);    
             }
             
             GUI.Label(rect, text, style);
@@ -160,7 +160,7 @@ namespace PhantomEngine
         {
             if (repaint)
             {
-                PhantomGUIUtility.UpdateRepaint(rect.height);    
+                PhantomGUIUtility.RepaintUpdate(rect.height);    
             }
             
             return GUI.TextField(rect, text, style);
@@ -186,7 +186,7 @@ namespace PhantomEngine
         {
             if (repaint)
             {
-                PhantomGUIUtility.UpdateRepaint(rect.height);    
+                PhantomGUIUtility.RepaintUpdate(rect.height);    
             }
             
             return EditorGUI.Popup(rect, select, displayOptions, style);
@@ -212,7 +212,7 @@ namespace PhantomEngine
         {
             if (repaint)
             {
-                PhantomGUIUtility.UpdateRepaint(rect.height);   
+                PhantomGUIUtility.RepaintUpdate(rect.height);   
             }
             
             return EditorGUI.EnumPopup(rect, popup, style);

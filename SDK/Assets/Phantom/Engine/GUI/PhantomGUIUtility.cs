@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 
+using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -21,24 +22,24 @@ namespace PhantomEngine
         // ==================================================
         // [ Utility ]
         // ==================================================
-        public static void RequestRepaint() => IsRepaint = true;
+        public static void RepaintRequest() => IsRepaint = true;
 
-        public static void ClearRepaint() => IsRepaint = false;
+        public static void RepaintClear() => IsRepaint = false;
         
         /// <summary>
         /// current gui total height update
         /// </summary>
         /// <param name="value"> height value </param>
-        public static void UpdateRepaint(float value)
+        public static void RepaintUpdate(float value)
         {
             EditorGUILayout.Space(value);
-            RequestRepaint();
+            RepaintRequest();
         }
         
         // ==================================================
         // [ Function ]
         // ==================================================
-        public static void Repaint(this EditorWindow window)
+        public static void Repaint(this EditorWindow window) // EditorWindow
         {
             if (!IsRepaint)
                 return;
@@ -49,11 +50,10 @@ namespace PhantomEngine
             if((bool)(Object)window)
                 window.Repaint();
             
-            ClearRepaint();
+            RepaintClear();
         }
         
-        // [ Editor ]
-        public static void Repaint(this Editor editor)
+        public static void Repaint(this Editor editor) // Editor
         {
             if (!IsRepaint)
                 return;
@@ -64,7 +64,7 @@ namespace PhantomEngine
             if((bool) (Object) editor)
                 editor.Repaint();
             
-            ClearRepaint();
+            RepaintClear();
         }
 
         #endregion
