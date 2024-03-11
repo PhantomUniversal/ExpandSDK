@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="052d4373-0d20-4d17-8e79-09128fe600ee" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SDK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDK/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Phantom/Core/Editor/PhantomEditorUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Phantom/Core/Editor/PhantomEditorUtility.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +133,7 @@
       <workItem from="1708999251433" duration="6310000" />
       <workItem from="1709406079992" duration="29649000" />
       <workItem from="1710187413693" duration="469000" />
-      <workItem from="1710188880794" duration="1152000" />
+      <workItem from="1710188880794" duration="1372000" />
     </task>
     <servers />
   </component>
