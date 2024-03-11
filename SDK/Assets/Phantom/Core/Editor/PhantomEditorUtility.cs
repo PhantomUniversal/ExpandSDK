@@ -1,3 +1,5 @@
+using UnityEngine;
+
 #if UNITY_EDITOR
 
 namespace PhantomEditor
@@ -9,8 +11,9 @@ namespace PhantomEditor
 
         internal static string CombinePath(string packagePath, string resourcePath)
         {
-            return packagePath.Contains(PhantomEditorHelper.Identifier) 
-                ? $"Package/{PhantomEditorHelper.Identifier}/Resource/{resourcePath}" : $"{PhantomEditorHelper.Resource}/{resourcePath}";
+            Debug.LogError(packagePath.Contains(PhantomEditorHelper.Identifier));
+            Debug.LogError($"Package/{PhantomEditorHelper.Identifier}/Resource/{resourcePath}");
+            return packagePath.Contains(PhantomEditorHelper.Identifier) ? $"Package/{PhantomEditorHelper.Identifier}/Resource/{resourcePath}" : $"{PhantomEditorHelper.Resource}/{resourcePath}";
         }
 
         #endregion
