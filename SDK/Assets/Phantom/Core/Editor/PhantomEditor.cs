@@ -17,7 +17,7 @@ namespace PhantomEditor
 
         private static PhantomEditorSetting setting;
 
-        internal static bool IsSetting => Setting is not null;
+        internal static bool IsSetting => setting is not null;
         
         internal static PhantomEditorSetting Setting
         {

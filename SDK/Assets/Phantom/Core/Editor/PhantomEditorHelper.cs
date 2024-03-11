@@ -41,9 +41,14 @@ namespace PhantomEditor
         internal const string Setting = "PhantomSetting";
 
         /// <summary>
-        /// SDK Url
+        /// SDK Git
         /// </summary>
-        internal const string Url = "https://raw.githubusercontent.com/PhantomUniversal/ExpandSDK/main/Release";
+        internal const string Git = "https://raw.githubusercontent.com/PhantomUniversal/ExpandSDK/main/Release";
+
+        /// <summary>
+        /// SDK Package
+        /// </summary>
+        internal const string Package = "https://github.com/PhantomUniversal/ExpandSDK.git?path=SDK/Assets/Phantom";
         
         /// <summary>
         /// Assembly resource
