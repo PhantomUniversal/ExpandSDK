@@ -5,6 +5,7 @@ namespace PhantomEngine.UI
 
     using UnityEngine;
     using UnityEditor;
+    using PhantomEditor;
     
     [CustomEditor(typeof(PhantomUICanvasGroup), true)]
     public class PhantomUICanvasGroupInspector : PhantomGUIEditor

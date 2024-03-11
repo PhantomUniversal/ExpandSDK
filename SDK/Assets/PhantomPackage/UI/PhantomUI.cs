@@ -10,9 +10,9 @@ namespace PhantomEngine.UI
         
         #region PROPERTY
 
-        private static Dictionary<IUISubject, PhantomUIConfig> _container;
+        private static Dictionary<IUISubject, PhantomUIConfig> container;
     
-        private static bool IsContainer => _container is { Count: > 0 };
+        private static bool IsContainer => container is { Count: > 0 };
     
         #endregion
 
@@ -27,11 +27,11 @@ namespace PhantomEngine.UI
             if (callback is not IUISubject target)
                 return false;
 
-            _container ??= new Dictionary<IUISubject, PhantomUIConfig>();
+            container ??= new Dictionary<IUISubject, PhantomUIConfig>();
             config ??= new PhantomUIConfig();
             config.uid = GeneratorUid(config.uid);
 
-            return _container.TryAdd(target, config);
+            return container.TryAdd(target, config);
         }
 
         public static bool Remove(object callback)
@@ -39,10 +39,10 @@ namespace PhantomEngine.UI
             if (callback is not IUISubject target)
                 return false;
 
-            if (!IsContainer || !_container.ContainsKey(target))
+            if (!IsContainer || !container.ContainsKey(target))
                 return false;
 
-            return _container.Remove(target);
+            return container.Remove(target);
         }
 
         public static bool Remove(string code)
@@ -50,12 +50,12 @@ namespace PhantomEngine.UI
             if (!IsContainer)
                 return false;
 
-            foreach (var target in _container)
+            foreach (var target in container)
             {
                 if (target.Value.uid != code) 
                     continue;
                 
-                _container.Remove(target.Key);
+                container.Remove(target.Key);
                 return true;
             }
 
@@ -67,18 +67,18 @@ namespace PhantomEngine.UI
             if (!IsContainer)
                 return;
             
-            foreach (var target in _container)
+            foreach (var target in container)
             {
-                _container.Remove(target.Key);
+                container.Remove(target.Key);
             }
             
             if (initialize)
-                _container = null;
+                container = null;
         }
 
         public static IUISubject Find(string uid)
         {
-            return !IsContainer ? null : _container.FirstOrDefault(x => x.Value.uid == uid).Key;
+            return !IsContainer ? null : container.FirstOrDefault(x => x.Value.uid == uid).Key;
         }
 
         public static bool Exist(object callback)
@@ -86,7 +86,7 @@ namespace PhantomEngine.UI
             if (callback is not IUISubject target)
                 return false;
         
-            return IsContainer && _container.ContainsKey(target);
+            return IsContainer && container.ContainsKey(target);
         }
 
         #endregion
@@ -100,7 +100,7 @@ namespace PhantomEngine.UI
             if (!IsContainer)
                 return;
 
-            foreach (var target in _container)
+            foreach (var target in container)
             {
                 target.Key.OnObserver(request);
             }
@@ -117,7 +117,7 @@ namespace PhantomEngine.UI
                 return;
             }
             
-            foreach (var target in _container)
+            foreach (var target in container)
             {
                 if(target.Value.type != type)
                     continue;
@@ -131,7 +131,7 @@ namespace PhantomEngine.UI
             if (!IsContainer)
                 return;
             
-            foreach (var target in _container)
+            foreach (var target in container)
             {
                 if (target.Value.uid != uid) 
                     continue;

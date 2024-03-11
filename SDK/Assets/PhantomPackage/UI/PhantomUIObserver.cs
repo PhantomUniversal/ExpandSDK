@@ -12,10 +12,10 @@ namespace PhantomEngine.UI
         
         #region CONFIG
         
-        [SerializeField, PhantomFoldout("zz", true), PhantomReadOnly] public string eventType;
+        [SerializeField, Foldout("zz", true), ReadOnly] public string eventType;
         [SerializeField] public string eventUid;
-        [SerializeField, PhantomFoldout("zzz"), PhantomLabel("Type")] public string eventTypes;
-        [SerializeField, PhantomFoldout("zz")] public string eventTypess;
+        [SerializeField, Foldout("zzz"), Label("Type", 0)] public string eventTypes;
+        [SerializeField, Foldout("zz")] public string eventTypess;
         //[SerializeField] public List<Object> eventObserver;
         
         public string EventTemp { get; set; }
