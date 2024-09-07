@@ -1,0 +1,22 @@
+{
+  "name": "com.phantomuniversal.sdk",
+  "version": "0.0.1",
+  "displayName": "ExpandSDK",
+  "description": "Phantom universal expand sdk",
+  "unity": "2022.1",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.addressables": "1.22.2",
+    "com.unity.inputsystem": "1.7.0",
+    "com.unity.editorcoroutines": "1.0.0"
+  },
+  "keywords": [    
+    "PhantomUniversal",
+    "ExpandSDK",
+  ],
+  "author": {
+    "name": "Phantom",
+    "email": "chho1365@gmail.com",
+    "url": ""
+  }
+}
