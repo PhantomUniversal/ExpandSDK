@@ -76,6 +76,8 @@ crashlytics-build.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/unity
 
+.idea
+
 HotReload
 HotReload.meta
 com.singularitygroup.hotreload
