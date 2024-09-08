@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace PhantomCore
+namespace PhantomEditor
 {
     public static class PhantomGUIUtility
     {
