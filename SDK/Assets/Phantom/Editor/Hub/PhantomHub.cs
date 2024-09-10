@@ -1,13 +1,18 @@
-using UnityEditor;
+using UnityEngine;
 
 namespace PhantomEditor
 {
-    public static class PhantomHub
+    public sealed class PhantomHub : PhantomGUITool
     {
-        [MenuItem(PhantomHubHelper.ToolPath)]
-        private static void Tool()
+        public override string DrawName => PhantomHubConfig.Name;
+        public override Vector2 DrawSize => PhantomHubLayout.Size;
+        public override PhantomGUILocation DrawLocation => PhantomGUILocation.Center;
+        
+        protected override void DrawGUI()
         {
-            PhantomTool.Window<PhantomHubWindow>(PhantomHubHelper.ToolTitle, PhantomHubHelper.ToolSize, PhantomEditorLocation.Center);
+            PhantomGUI.BeginVerticalLayout();
+            PhantomGUI.BoldLabel("Phantom Hub");
+            PhantomGUI.EndVerticalLayout();
         }
     }
 }

@@ -4,8 +4,16 @@ namespace PhantomEditor
 {
     public static class PhantomGUIHelper
     {
-        public static RectOffset LayoutOffset => new(0, 0, 0, 0);
+        public static Rect ConfigurePlacement(Vector2 size, PhantomGUILocation location)
+        {
+            var screenLocation = location switch
+            {
+                PhantomGUILocation.General => PhantomGUILayout.Location,
+                PhantomGUILocation.Center => new Vector2(Screen.currentResolution.width * 0.5f - size.x * 0.5f, PhantomGUILayout.Location.y),
+                _ => Vector2.zero
+            };
 
-        public const float LayoutProperty = 20f;
+            return new Rect(screenLocation, size);
+        }
     }
 }

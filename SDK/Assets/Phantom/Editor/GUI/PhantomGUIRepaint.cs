@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PhantomEditor
 {
-    public static class PhantomGUIUtility
+    public static class PhantomGUIRepaint
     {
         private static bool RepaintEnable { get; set; }
         
@@ -19,16 +19,16 @@ namespace PhantomEditor
         }
 
 
-        public static void Repaint(this EditorWindow editorWindow)
+        public static void Repaint(this EditorWindow editor)
         {
             if (!RepaintEnable)
                 return;
 
-            if (Event.current == null || Event.current.type != EventType.Used && !Event.current.isMouse)
+            if (Event.current == null || Event.current.type != EventType.Repaint)
                 return;
             
-            if((bool)(Object)editorWindow)
-                editorWindow.Repaint();
+            if(editor != null)
+                editor.Repaint();
             
             RepaintClear();
         }
@@ -38,10 +38,10 @@ namespace PhantomEditor
             if (!RepaintEnable)
                 return;
 
-            if (Event.current == null || Event.current.type != EventType.Used && !Event.current.isMouse)
+            if (Event.current == null || Event.current.type != EventType.Repaint)
                 return;
             
-            if ((bool)(Object)editor)
+            if (editor != null)
                 editor.Repaint();
             
             RepaintClear();

@@ -18,7 +18,7 @@ namespace PhantomEditor
                 label ??= new GUIStyle(GUI.skin.label)
                 {
                     padding = new RectOffset(2, 0, 0, 4),
-                    margin = PhantomGUIHelper.LayoutOffset,
+                    margin = PhantomGUILayout.Margin,
                     clipping = TextClipping.Clip
                 };
                 return label;
