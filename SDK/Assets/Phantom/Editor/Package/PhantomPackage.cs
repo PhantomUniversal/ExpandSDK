@@ -6,7 +6,7 @@ namespace PhantomEditor
     {
         public override string DrawName => PhantomPackageConfig.ToolName;
         public override Vector2 DrawSize => PhantomPackageConfig.ToolSize;
-        public override PhantomGUILocation DrawLocation => PhantomPackageConfig.ToolLocation;
+        public override PhantomGUILocationType DrawLocation => PhantomPackageConfig.ToolLocation;
         
         protected override void DrawGUI()
         {

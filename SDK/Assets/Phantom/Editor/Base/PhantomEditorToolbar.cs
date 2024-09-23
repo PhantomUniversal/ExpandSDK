@@ -72,15 +72,18 @@ namespace PhantomEditor
         { 
             PhantomGUI.BeginHorizontalLayout();
             PhantomGUI.Space();
-            
-            PhantomGUI.CustomButton("Setup", 60f, 20f, Test, PhantomGUIStyle.BoldButton, true);
+
+            if (PhantomGUI.CustomButton(PhantomGUIResource.IconTexture("download.png"), 80f, 20f))
+            {
+                
+            }
+
+            if (PhantomGUI.CustomButton(PhantomGUIResource.IconTexture("etc.png"), 20f, 20f))
+            {
+                
+            }
             
             PhantomGUI.EndHorizontalLayout();
-        }
-
-        private static void Test()
-        {
-            Debug.Log("Test");
         }
     }
 }

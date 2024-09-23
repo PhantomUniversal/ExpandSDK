@@ -55,59 +55,73 @@ namespace PhantomEditor
         
         public static void Label(string text, bool bold = false, bool repaint = false)
         {
-            var controlRect = EditorGUILayout.GetControlRect(false, PhantomGUILayout.DefaultProperty);
+            var position = EditorGUILayout.GetControlRect(false, PhantomGUILayout.DefaultProperty);
             var style = bold ? PhantomGUIStyle.BoldLabel : PhantomGUIStyle.Label;
-            PhantomLabel(controlRect, text, style, repaint);
+            PhantomLabel(position, text, style, repaint);
         }
         
-        public static void CustomLabel(Rect rect, string text, GUIStyle style = null, bool repaint = false)
+        public static void CustomLabel(Rect position, string text, bool repaint = false, GUIStyle style = null)
         {
             style ??= PhantomGUIStyle.Label;
-            PhantomLabel(rect, text, style, repaint);
+            PhantomLabel(position, text, style, repaint);
         }
         
-        private static void PhantomLabel(Rect rect, string text, GUIStyle style, bool repaint)
+        private static void PhantomLabel(Rect position, string text, GUIStyle style, bool repaint)
         {
             if (repaint)
             {
-                PhantomGUIUpdate.RepaintSpace(rect.height);
+                PhantomGUIUpdate.RepaintSpace(position.height);
             }
             
-            GUI.Label(rect, text, style);
+            GUI.Label(position, text, style);
         }
         
         #endregion
 
         #region BUTTON
-
-        public static void Button(string text, Action action = null, bool bold = false)
+        // I think it is necessary to separate the buttons by type
+        public static bool Button(string text, bool bold = false)
         {
-            var controlRect = EditorGUILayout.GetControlRect(false, PhantomGUILayout.DefaultProperty);
+            var position = EditorGUILayout.GetControlRect(false, PhantomGUILayout.DefaultProperty);
             var style = bold ? PhantomGUIStyle.BoldButton : PhantomGUIStyle.Button;
-            PhantomButton(controlRect, text, action, style, true);
-        }
-
-        public static void CustomButton(string text, float width, float height, Action action = null, GUIStyle style = null, bool repaint = false)
-        {
-            var controlRect = EditorGUILayout.GetControlRect(false, height);
-            controlRect.width = width;
-            style ??= GUI.skin.button;
-            PhantomButton(controlRect, text, action, style, repaint);
+            var content = new GUIContent(text);
+            return PhantomButton(position, content, style, true);
         }
         
-        private static void PhantomButton(Rect rect, string text, Action action, GUIStyle style, bool repaint)
+        public static bool Button(Texture texture)
+        {
+            var position = EditorGUILayout.GetControlRect(false, PhantomGUILayout.DefaultProperty);
+            var style = GUI.skin.button;
+            var content = new GUIContent(texture);
+            return PhantomButton(position, content,  style, false);
+        }
+        
+        public static bool CustomButton(string text, float width, float height, bool repaint = false, GUIStyle style = null)
+        {
+            var position = EditorGUILayout.GetControlRect(false, GUILayout.Width(width), GUILayout.Height(height));
+            style ??= GUI.skin.button;
+            var content = new GUIContent(text);
+            return PhantomButton(position, content, style, repaint);
+        }
+        
+        public static bool CustomButton(Texture texture, float width, float height, bool repaint = false, GUIStyle style = null)
+        {
+            var position = EditorGUILayout.GetControlRect(false, GUILayout.Width(width), GUILayout.Height(height));
+            style ??= GUI.skin.button;
+            var content = new GUIContent(texture);
+            return PhantomButton(position, content, style, repaint);
+        }
+        
+        private static bool PhantomButton(Rect position, GUIContent content, GUIStyle style, bool repaint)
         {
             if (repaint)
             {
-                PhantomGUIUpdate.RepaintSpace(rect.height);
+                PhantomGUIUpdate.RepaintSpace(position.height);
             }
-            
-            if (GUI.Button(rect, text, style))
-            {
-                action?.Invoke();
-            }
-        }
 
+            return GUI.Button(position, content, style);
+        }
+        
         #endregion
     }   
 }

@@ -1,6 +1,6 @@
 namespace PhantomEditor
 {
-    public enum PhantomGUILocation
+    public enum PhantomGUILocationType
     {
         General,
         Center

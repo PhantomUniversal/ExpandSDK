@@ -9,7 +9,7 @@ namespace PhantomEditor
         
         public abstract string DrawName { get; }
         public abstract Vector2 DrawSize { get; }
-        public abstract PhantomGUILocation DrawLocation { get; }
+        public abstract PhantomGUILocationType DrawLocation { get; }
 
         
         private SerializedObject _serializedObject;

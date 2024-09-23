@@ -8,6 +8,6 @@ namespace PhantomEditor
         
         internal static readonly Vector2 ToolSize = new(480f, 720f);
 
-        internal const PhantomGUILocation ToolLocation = PhantomGUILocation.Center;
+        internal const PhantomGUILocationType ToolLocation = PhantomGUILocationType.Center;
     }
 }

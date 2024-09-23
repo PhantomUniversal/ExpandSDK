@@ -8,7 +8,7 @@ namespace PhantomEditor
         public static void Tool<T>() where T : PhantomGUIWindow
         {
             var window = EditorWindow.GetWindow<T>();
-            window.titleContent = new GUIContent(PhantomEditorConfig.ProjectTag + " " + window.DrawName);
+            window.titleContent = new GUIContent(PhantomEditorConfig.PackageTag + " " + window.DrawName);
             window.position = PhantomGUIHelper.ConfigurePlacement(window.DrawSize, window.DrawLocation);
             window.minSize = window.DrawSize;
             window.maxSize = window.DrawSize;

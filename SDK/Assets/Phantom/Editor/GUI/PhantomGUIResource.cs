@@ -1,9 +1,15 @@
+using UnityEditor;
 using UnityEngine;
 
 namespace PhantomEditor
 {
     public sealed class PhantomGUIResource
     {
+        public static Texture2D IconTexture(string iconName)
+        {
+            return EditorGUIUtility.FindTexture(PhantomEditorPath.ResourcePath(iconName, PhantomEditorResourceType.Icon));
+        }
+        
         public static Texture2D ColorTexture(int width, int height, Color color)
         {
             var pixelCount = width * height;
