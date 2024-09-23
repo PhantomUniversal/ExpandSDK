@@ -6,34 +6,65 @@ namespace PhantomEditor
     {
         #region LABEL
         
-        private static GUIStyle label;
-        
-        private static GUIStyle boldLabel;
-        
+        private static GUIStyle _label;
+        private static GUIStyle _boldLabel;
         
         public static GUIStyle Label
         {
             get
             {
-                label ??= new GUIStyle(GUI.skin.label)
+                _label ??= new GUIStyle(GUI.skin.label)
                 {
                     padding = new RectOffset(2, 0, 0, 4),
-                    margin = PhantomGUILayout.Margin,
+                    margin = PhantomGUILayout.DefaultOffset,
                     clipping = TextClipping.Clip
                 };
-                return label;
+                return _label;
             }
         }
-
         public static GUIStyle BoldLabel
         {
             get
             {
-                boldLabel ??= new GUIStyle(Label)
+                _boldLabel ??= new GUIStyle(Label)
                 {
                     fontStyle = FontStyle.Bold
                 };
-                return boldLabel;
+                return _boldLabel;
+            }
+        }
+
+        #endregion
+
+        #region BUTTON
+
+        private static GUIStyle _button;
+        private static GUIStyle _boldButton;
+
+        public static GUIStyle Button
+        {
+            get
+            {
+                _button ??= new GUIStyle(GUI.skin.button)
+                {
+                    padding = PhantomGUILayout.DefaultOffset,
+                    margin = PhantomGUILayout.DefaultOffset,
+                    clipping = TextClipping.Clip,
+                    alignment = TextAnchor.MiddleCenter
+                };
+                return _button;
+            }
+        }
+
+        public static GUIStyle BoldButton
+        {
+            get
+            {
+                _boldButton ??= new GUIStyle(Button)
+                {
+                    fontStyle = FontStyle.Bold
+                };
+                return _boldButton;
             }
         }
 

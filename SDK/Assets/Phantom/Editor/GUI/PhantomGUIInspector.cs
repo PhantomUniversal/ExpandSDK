@@ -12,12 +12,12 @@ namespace PhantomEditor
             EditorGUI.BeginChangeCheck();
             
             DrawGUI();
-            PhantomGUIRepaint.Repaint(this);
-            
-            if (!EditorGUI.EndChangeCheck())
-                return;
-            
-            serializedObject.ApplyModifiedProperties();
+            PhantomGUIUpdate.Repaint(this);
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                serializedObject.ApplyModifiedProperties();
+            }
         }
     }
 }

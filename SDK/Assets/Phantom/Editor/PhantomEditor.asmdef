@@ -1,6 +1,6 @@
 {
     "name": "PhantomEditor",
-    "rootNamespace": "",
+    "rootNamespace": "PhantomEditor",
     "references": [],
     "includePlatforms": [
         "Editor"

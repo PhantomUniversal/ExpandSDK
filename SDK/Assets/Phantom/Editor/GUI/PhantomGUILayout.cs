@@ -4,10 +4,11 @@ namespace PhantomEditor
 {
     public static class PhantomGUILayout
     {
-        public static Vector2 Location => new(0, 83f);
+        public static readonly Vector2 DefaultSize = new(0, 83f);
         
-        public static RectOffset Margin => new(0, 0, 0, 0);
+        public static readonly RectOffset DefaultOffset = new(0, 0, 0, 0);
 
-        public const float Property = 20f;
+        // How about changing Property to Height?
+        public const float DefaultProperty = 20f;
     }
 }
