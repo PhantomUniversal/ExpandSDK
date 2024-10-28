@@ -4,16 +4,17 @@ namespace PhantomEditor
 {
     public static class PhantomGUIHelper
     {
-        public static Rect ConfigurePlacement(Vector2 size, PhantomGUILocationType location)
+        private static readonly PhantomGUIStack<Color> ColorStack = new();
+        
+        public static void PushColor(Color color)
         {
-            var screenLocation = location switch
-            {
-                PhantomGUILocationType.General => PhantomGUILayout.DefaultSize,
-                PhantomGUILocationType.Center => new Vector2(Screen.currentResolution.width * 0.5f - size.x * 0.5f, PhantomGUILayout.DefaultSize.y),
-                _ => Vector2.zero
-            };
+            ColorStack.Push(GUI.color);
+            GUI.color = color;
+        }
 
-            return new Rect(screenLocation, size);
+        public static void PopColor()
+        {
+            GUI.color = ColorStack.Pop();
         }
     }
 }

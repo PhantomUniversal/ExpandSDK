@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PhantomEditor
 {
-    public sealed class PhantomGUIResource
+    public static class PhantomGUIResource
     {
         public static Texture2D IconTexture(string iconName)
         {

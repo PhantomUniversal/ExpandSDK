@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PhantomCore
+namespace PhantomEngine
 {
     public abstract class PhantomSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {

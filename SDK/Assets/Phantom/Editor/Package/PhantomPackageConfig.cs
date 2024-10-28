@@ -1,13 +1,11 @@
-using UnityEngine;
-
 namespace PhantomEditor
 {
     public static class PhantomPackageConfig
     {
-        internal const string ToolName = "Package";
-        
-        internal static readonly Vector2 ToolSize = new(480f, 720f);
+        internal const string ToolName = "PackageManager";
 
-        internal const PhantomGUILocationType ToolLocation = PhantomGUILocationType.Center;
+        internal const float ToolWidth = 480f;
+        
+        internal const float ToolHeight = 720f;
     }
 }

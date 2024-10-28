@@ -1,22 +1,13 @@
-using UnityEngine;
+using UnityEditor;
 
 namespace PhantomEditor
 {
-    public sealed class PhantomPackage : PhantomGUIWindow
+    public static class PhantomPackage
     {
-        public override string DrawName => PhantomPackageConfig.ToolName;
-        public override Vector2 DrawSize => PhantomPackageConfig.ToolSize;
-        public override PhantomGUILocationType DrawLocation => PhantomPackageConfig.ToolLocation;
-        
-        protected override void DrawGUI()
+        [MenuItem(PhantomEditorConfig.PackageName + "/" + PhantomPackageConfig.ToolName, false, priority = 0)]
+        private static void Tool()
         {
-            PhantomGUI.BeginVerticalLayout();
-            
-            PhantomGUI.Label("Test1", true);
-            PhantomGUI.Label("Test2");
-            PhantomGUI.Label("Test3");
-            
-            PhantomGUI.EndVerticalLayout();
+            PhantomGUIFunction.Tool<PhantomPackageTool>();
         }
     }
 }

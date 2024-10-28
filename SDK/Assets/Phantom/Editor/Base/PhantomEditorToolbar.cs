@@ -67,23 +67,29 @@ namespace PhantomEditor
             
             EditorApplication.update -= OnUpdate;
         }
-
+        
         private static void OnDrawer()
         { 
-            PhantomGUI.BeginHorizontalLayout();
-            PhantomGUI.Space();
-
-            if (PhantomGUI.CustomButton(PhantomGUIResource.IconTexture("download.png"), 80f, 20f))
-            {
-                
-            }
-
-            if (PhantomGUI.CustomButton(PhantomGUIResource.IconTexture("etc.png"), 20f, 20f))
-            {
-                
-            }
-            
-            PhantomGUI.EndHorizontalLayout();
+            // PhantomGUI.BeginHorizontalLayout();
+            // PhantomGUI.Space();
+            //
+            // var drawToolbarRect = PhantomGUILayout.ControlRect();
+            //
+            // drawToolbarRect.x = 20;
+            // drawToolbarRect.width = 80f;
+            // if (PhantomGUI.CustomButton(drawToolbarRect,  PhantomGUIResource.IconTexture("download.png")))
+            // {
+            //     
+            // }
+            //
+            // drawToolbarRect.x += 80f;
+            // drawToolbarRect.width = 20f;
+            // if (PhantomGUI.CustomButton(drawToolbarRect, PhantomGUIResource.IconTexture("etc.png")))
+            // {
+            //     
+            // }
+            //
+            // PhantomGUI.EndHorizontalLayout();
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace PhantomCore
+namespace PhantomEngine
 {
     public abstract class PhantomData<T> where T : class, new()
     {

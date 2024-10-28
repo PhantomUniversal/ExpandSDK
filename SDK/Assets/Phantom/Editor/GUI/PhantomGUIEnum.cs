@@ -1,8 +1,18 @@
 namespace PhantomEditor
 {
-    public enum PhantomGUILocationType
+    public enum SizeType
     {
-        General,
-        Center
+        Short = 3,
+        Tall = 4,
+        Grande = 5,
+        Venti = 6,
+        Trenta = 7,
+    }
+    
+    public enum ScrollType
+    {
+        None,
+        Vertical,
+        Horizontal
     }
 }
